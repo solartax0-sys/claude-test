@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>솔라세무회계컨설팅 | 세무사 설나현</title>
+    <style>
+        :root {
+            --primary: #f29f05;
+            --primary-dark: #d98e04;
+            --primary-light: #fef3d0;
+            --primary-bg: #fff9ee;
+            --bg-cream: #fffbf2;
+            --bg-gray: #f8f9fb;
+            --text-dark: #1a1a2e;
+            --text-gray: #6b7280;
+            --white: #ffffff;
+            --border: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-dark);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .logo-sub { font-size: 9px; color: #aaa; letter-spacing: 0.3px; margin-bottom: 3px; }
+
+        .logo-main {
+            background: var(--primary);
+            color: white;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            padding: 4px 9px;
+            border-radius: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 44px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-dark);
+            text-decoration: none;
+            cursor: pointer;
+            transition: color .2s;
+            padding-bottom: 2px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .btn-nav {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 11px 22px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .2s;
+            font-family: inherit;
+        }
+
+        .btn-nav:hover { background: var(--primary-dark); }
+
+        /* ── PAGES ── */
+        .page { display: none; padding-top: 68px; }
+        .page.active { display: block; }
+
+        /* ── HERO ── */
+        .hero {
+            background: var(--bg-cream);
+            padding: 80px 80px 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            min-height: calc(100vh - 68px);
+        }
+
+        .hero-left { max-width: 560px; }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(242,159,5,0.13);
+            color: #7a5300;
+            padding: 8px 18px;
+            border-radius: 24px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .hero-title {
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1.25;
+            margin-bottom: 26px;
+            letter-spacing: -1px;
+        }
+
+        .hero-title .accent { color: var(--primary); }
+
+        .hero-desc {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.85;
+            margin-bottom: 40px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 52px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .2s, transform .15s;
+            font-family: inherit;
+        }
+
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-dark);
+            border: 2px solid var(--border);
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: border-color .2s, color .2s;
+            font-family: inherit;
+        }
+
+        .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+
+        .hero-social-label { font-size: 12px; color: #aaa; margin-bottom: 10px; }
+
+        .social-row { display: flex; gap: 10px; }
+
+        .soc-icon {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px; font-weight: 800;
+            cursor: pointer;
+            transition: transform .18s, box-shadow .18s;
+            text-decoration: none;
+        }
+
+        .soc-icon:hover { transform: scale(1.12); box-shadow: 0 4px 12px rgba(0,0,0,.15); }
+
+        .soc-n   { background: #03c75a; color: white; }
+        .soc-yt  { background: #ff0000; color: white; }
+        .soc-ig  { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: white; }
+        .soc-kk  { background: #fee500; color: #3a1d1d; }
+
+        /* Profile Card */
+        .hero-right { flex-shrink: 0; }
+
+        .profile-card {
+            background: var(--primary-light);
+            border-radius: 24px;
+            padding: 48px 40px 56px;
+            text-align: center;
+            min-width: 270px;
+            position: relative;
+        }
+
+        .prof-avatar {
+            width: 100px; height: 100px;
+            background: rgba(242,159,5,0.28);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .prof-avatar svg { width: 52px; height: 52px; stroke: var(--primary); }
+
+        .prof-name { font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+
+        .prof-role { font-size: 13px; color: var(--text-gray); }
+
+        .prof-badge {
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border-radius: 10px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 4px 16px rgba(0,0,0,.13);
+            white-space: nowrap;
+        }
+
+        .prof-badge .star { color: var(--primary); font-size: 16px; }
+
+        /* ── SECTION BASE ── */
+        .section { padding: 80px 80px; }
+        .section-header { text-align: center; margin-bottom: 56px; }
+        .section-title { font-size: 36px; font-weight: 900; margin-bottom: 14px; letter-spacing: -0.5px; }
+        .section-desc { font-size: 16px; color: var(--text-gray); line-height: 1.75; }
+
+        /* ── SERVICES ── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .svc-card {
+            border: 1.5px solid var(--border);
+            border-radius: 18px;
+            padding: 28px 22px;
+            transition: transform .2s, box-shadow .2s, border-color .2s;
+            cursor: default;
+            background: white;
+        }
+
+        .svc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 32px rgba(242,159,5,.15);
+            border-color: rgba(242,159,5,.4);
+        }
+
+        .svc-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px; }
+
+        .svc-icon-wrap {
+            width: 48px; height: 48px;
+            background: var(--primary-light);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .svc-icon-wrap svg { width: 24px; height: 24px; stroke: var(--primary); }
+
+        .svc-tag {
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .svc-name { font-size: 15px; font-weight: 800; margin-bottom: 9px; }
+
+        .svc-desc { font-size: 12.5px; color: var(--text-gray); line-height: 1.65; }
+
+        /* ── PROCESS ── */
+        .process-wrap { background: var(--bg-gray); padding: 80px; }
+
+        .process-steps {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-top: 56px;
+            position: relative;
+        }
+
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+
+        .step-connector {
+            position: absolute;
+            top: 35px;
+            left: 50%;
+            right: -50%;
+            height: 2px;
+            background: var(--primary-light);
+        }
+
+        .process-step:last-child .step-connector { display: none; }
+
+        .step-num {
+            width: 70px; height: 70px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px; font-weight: 800; color: white;
+            position: relative; z-index: 1;
+            margin-bottom: 18px;
+        }
+
+        .step-title { font-size: 15px; font-weight: 700; margin-bottom: 7px; }
+        .step-desc { font-size: 13px; color: var(--text-gray); }
+
+        /* ── BLOG PREVIEW ── */
+        .blog-wrap { padding: 80px; }
+
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+        }
+
+        .blog-list-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+
+        .blog-list-header h2 { font-size: 26px; font-weight: 900; }
+
+        .view-all-link {
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .blog-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .blog-card {
+            border: 1.5px solid var(--border);
+            border-radius: 16px;
+            padding: 22px;
+            cursor: pointer;
+            transition: transform .18s, box-shadow .18s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,.08);
+        }
+
+        .blog-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 11px; }
+
+        .blog-cat {
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 9px;
+            border-radius: 20px;
+        }
+
+        .blog-date { font-size: 11.5px; color: #aaa; }
+
+        .blog-title { font-size: 14.5px; font-weight: 800; margin-bottom: 9px; line-height: 1.45; }
+
+        .blog-excerpt { font-size: 12.5px; color: var(--text-gray); line-height: 1.6; margin-bottom: 14px; }
+
+        .blog-more { color: var(--primary); font-size: 12.5px; font-weight: 700; }
+
+        /* Sidebar */
+        .sidebar-box {
+            background: var(--bg-cream);
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 18px;
+        }
+
+        .sidebar-box h3 { font-size: 14px; font-weight: 800; margin-bottom: 14px; }
+
+        .cat-list { list-style: none; }
+
+        .cat-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 9px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 13.5px;
+            cursor: pointer;
+            transition: color .18s;
+        }
+
+        .cat-list li:last-child { border-bottom: none; }
+        .cat-list li:hover { color: var(--primary); }
+        .cat-cnt { color: var(--primary); font-weight: 700; }
+
+        .consult-box {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 16px;
+            padding: 22px;
+        }
+
+        .consult-box h3 { font-size: 14px; font-weight: 800; margin-bottom: 7px; }
+        .consult-box p { font-size: 12.5px; color: var(--text-gray); margin-bottom: 14px; }
+
+        .btn-blk {
+            display: block;
+            width: 100%;
+            padding: 11px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 13.5px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 8px;
+            font-family: inherit;
+        }
+
+        .btn-blk-fill { background: var(--primary); color: white; border: none; }
+        .btn-blk-out  { background: transparent; color: var(--text-dark); border: 1.5px solid var(--border); }
+        .btn-blk-out:hover { border-color: var(--primary); color: var(--primary); }
+
+        /* ── CTA BANNER ── */
+        .cta-banner {
+            background: var(--primary);
+            padding: 64px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .cta-text h2 { font-size: 30px; font-weight: 900; color: white; margin-bottom: 8px; }
+        .cta-text p  { color: rgba(255,255,255,.85); font-size: 15px; }
+
+        .cta-btns { display: flex; gap: 14px; flex-shrink: 0; }
+
+        .btn-cta-w {
+            background: white; color: var(--primary);
+            border: none; padding: 14px 26px;
+            border-radius: 9px; font-size: 14px; font-weight: 800;
+            cursor: pointer; font-family: inherit;
+            transition: opacity .18s;
+        }
+
+        .btn-cta-w:hover { opacity: .9; }
+
+        .btn-cta-o {
+            background: transparent; color: white;
+            border: 2px solid rgba(255,255,255,.7);
+            padding: 14px 26px; border-radius: 9px;
+            font-size: 14px; font-weight: 800;
+            cursor: pointer; font-family: inherit;
+            transition: border-color .18s, background .18s;
+        }
+
+        .btn-cta-o:hover { border-color: white; background: rgba(255,255,255,.1); }
+
+        /* ── FOOTER ── */
+        footer {
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 60px 80px 28px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-desc { font-size: 13px; color: var(--text-gray); line-height: 1.75; margin-top: 14px; }
+
+        .footer-col h4 { font-size: 13px; font-weight: 800; margin-bottom: 14px; }
+        .footer-col p  { font-size: 13px; color: var(--text-gray); line-height: 1.85; }
+
+        .footer-sns { display: flex; gap: 10px; margin-top: 10px; }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p { font-size: 12px; color: #bbb; }
+
+        .footer-lnks { display: flex; gap: 22px; }
+        .footer-lnks a { font-size: 12px; color: #aaa; cursor: pointer; text-decoration: none; }
+        .footer-lnks a:hover { color: var(--primary); }
+
+        /* ── ABOUT PAGE ── */
+        .about-hero {
+            background: var(--bg-cream);
+            padding: 80px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .about-pcard {
+            background: white;
+            border-radius: 22px;
+            padding: 44px 36px;
+            text-align: center;
+            min-width: 250px;
+            box-shadow: 0 8px 36px rgba(0,0,0,.09);
+            flex-shrink: 0;
+        }
+
+        .about-avatar {
+            width: 110px; height: 110px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 18px;
+        }
+
+        .about-avatar svg { width: 56px; height: 56px; stroke: var(--primary); }
+
+        .about-name { font-size: 21px; font-weight: 900; margin-bottom: 6px; }
+        .about-role { font-size: 13px; color: var(--text-gray); margin-bottom: 18px; }
+
+        .about-license {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 12px; font-weight: 700;
+            padding: 7px 16px; border-radius: 20px;
+        }
+
+        .about-copy h1 {
+            font-size: 38px; font-weight: 900;
+            line-height: 1.35; margin-bottom: 22px;
+            letter-spacing: -0.5px;
+        }
+
+        .about-copy .accent { color: var(--primary); }
+
+        .about-copy p {
+            font-size: 15.5px; color: var(--text-gray);
+            line-height: 1.85; margin-bottom: 34px;
+        }
+
+        .stats-row { display: flex; gap: 48px; }
+
+        .stat-item { text-align: center; }
+        .stat-num  { font-size: 38px; font-weight: 900; color: var(--primary); }
+        .stat-lbl  { font-size: 12.5px; color: var(--text-gray); margin-top: 4px; }
+
+        .cred-section { padding: 70px 80px; }
+        .cred-section h2 { font-size: 28px; font-weight: 900; margin-bottom: 36px; }
+
+        .cred-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+
+        .cred-card {
+            background: var(--bg-cream);
+            border-radius: 18px;
+            padding: 28px;
+        }
+
+        .cred-card h3 { font-size: 15px; font-weight: 800; color: var(--primary); margin-bottom: 14px; }
+
+        .cred-card ul { list-style: none; }
+
+        .cred-card li {
+            font-size: 13.5px; color: var(--text-gray);
+            padding: 5px 0;
+            display: flex; align-items: center; gap: 8px;
+        }
+
+        .cred-card li::before {
+            content: '';
+            width: 6px; height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* ── BLOG FULL PAGE ── */
+        .blog-page-hero {
+            background: var(--bg-cream);
+            padding: 60px 80px 48px;
+        }
+
+        .blog-page-hero h1 { font-size: 38px; font-weight: 900; margin-bottom: 10px; }
+        .blog-page-hero p  { color: var(--text-gray); font-size: 15px; }
+
+        .blog-full-layout { padding: 40px 80px 80px; display: grid; grid-template-columns: 1fr 300px; gap: 40px; }
+
+        .blog-full-list { display: flex; flex-direction: column; gap: 18px; }
+
+        .blog-full-card {
+            border: 1.5px solid var(--border);
+            border-radius: 18px;
+            padding: 28px;
+            cursor: pointer;
+            transition: transform .18s, box-shadow .18s;
+        }
+
+        .blog-full-card:hover { transform: translateY(-3px); box-shadow: 0 6px 22px rgba(0,0,0,.08); }
+
+        .blog-full-card .blog-title { font-size: 18px; }
+        .blog-full-card .blog-excerpt { font-size: 14px; }
+
+        /* ── KIDS PAGE ── */
+        .kids-hero {
+            background: linear-gradient(135deg, #fff8e1, #fff3cd);
+            padding: 90px 80px;
+            text-align: center;
+        }
+
+        .kids-hero-badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 13px; font-weight: 700;
+            padding: 8px 20px; border-radius: 24px;
+            margin-bottom: 24px;
+        }
+
+        .kids-hero h1 { font-size: 46px; font-weight: 900; margin-bottom: 18px; letter-spacing: -1px; }
+        .kids-hero p  { font-size: 17px; color: var(--text-gray); line-height: 1.75; margin-bottom: 36px; }
+
+        .kids-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 22px;
+        }
+
+        .kids-card {
+            background: var(--bg-cream);
+            border-radius: 20px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: transform .2s;
+        }
+
+        .kids-card:hover { transform: translateY(-4px); }
+
+        .kids-emoji { font-size: 38px; margin-bottom: 14px; }
+        .kids-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 12px; }
+        .kids-card p  { font-size: 13.5px; color: var(--text-gray); line-height: 1.7; }
+
+        .program-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+
+        .prog-card {
+            background: white;
+            border-radius: 18px;
+            padding: 32px;
+            border-top: 4px solid var(--primary);
+            box-shadow: 0 2px 12px rgba(0,0,0,.06);
+        }
+
+        .prog-label { font-size: 12px; color: var(--primary); font-weight: 700; margin-bottom: 8px; }
+        .prog-card h3 { font-size: 19px; font-weight: 900; margin-bottom: 16px; }
+        .prog-card ul { list-style: none; }
+
+        .prog-card li {
+            font-size: 13.5px; color: var(--text-gray);
+            padding: 5px 0;
+            display: flex; align-items: center; gap: 8px;
+        }
+
+        .prog-card li::before { content: '✓'; color: var(--primary); font-weight: 700; }
+
+        /* ── MODAL ── */
+        .modal-bg {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.48);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-bg.open { display: flex; }
+
+        .modal-box {
+            background: white;
+            border-radius: 22px;
+            padding: 48px;
+            width: 540px;
+            max-width: 95vw;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 18px; right: 22px;
+            background: none; border: none;
+            font-size: 22px; cursor: pointer;
+            color: #aaa; line-height: 1;
+        }
+
+        .modal-close:hover { color: var(--text-dark); }
+
+        .modal-box h2 { font-size: 24px; font-weight: 900; margin-bottom: 6px; }
+        .modal-sub  { font-size: 13.5px; color: var(--text-gray); margin-bottom: 30px; }
+
+        .form-row { margin-bottom: 18px; }
+
+        .form-row label {
+            display: block;
+            font-size: 13.5px; font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        .form-row input,
+        .form-row select,
+        .form-row textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1.5px solid var(--border);
+            border-radius: 9px;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color .2s;
+            background: white;
+        }
+
+        .form-row input:focus,
+        .form-row select:focus,
+        .form-row textarea:focus { border-color: var(--primary); }
+
+        .form-row textarea { height: 100px; resize: vertical; }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            margin-top: 6px;
+            font-family: inherit;
+            transition: background .2s;
+        }
+
+        .form-submit:hover { background: var(--primary-dark); }
+
+        /* ── BLOG SYSTEM ── */
+        .blog-hero {
+            background: var(--bg-cream);
+            padding: 56px 80px 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .blog-hero h1 { font-size: 36px; font-weight: 900; margin-bottom: 8px; }
+        .blog-hero p  { color: var(--text-gray); font-size: 15px; margin-bottom: 28px; }
+
+        .blog-search-row {
+            display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+        }
+
+        .blog-search-input {
+            flex: 1; min-width: 220px;
+            padding: 11px 16px;
+            border: 1.5px solid var(--border);
+            border-radius: 9px;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color .2s;
+        }
+
+        .blog-search-input:focus { border-color: var(--primary); }
+
+        .blog-main { display: grid; grid-template-columns: 1fr 280px; gap: 36px; padding: 36px 80px 80px; }
+
+        .blog-cats {
+            display: flex; flex-wrap: wrap; gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .cat-btn {
+            padding: 7px 16px;
+            border-radius: 20px;
+            border: 1.5px solid var(--border);
+            background: white;
+            font-size: 13px; font-weight: 600;
+            cursor: pointer;
+            transition: all .18s;
+            font-family: inherit;
+        }
+
+        .cat-btn:hover, .cat-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .post-list { display: flex; flex-direction: column; gap: 14px; }
+
+        .post-item {
+            border: 1.5px solid var(--border);
+            border-radius: 16px;
+            padding: 24px 26px;
+            cursor: pointer;
+            transition: transform .18s, box-shadow .18s, border-color .18s;
+            background: white;
+        }
+
+        .post-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(242,159,5,.12);
+            border-color: rgba(242,159,5,.4);
+        }
+
+        .post-item-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .post-item-left { display: flex; align-items: center; gap: 10px; }
+
+        .post-item h3 { font-size: 16px; font-weight: 800; margin-bottom: 7px; line-height: 1.45; }
+        .post-item p  { font-size: 13px; color: var(--text-gray); line-height: 1.6; }
+
+        .pagination {
+            display: flex; justify-content: center; align-items: center;
+            gap: 6px; margin-top: 32px;
+        }
+
+        .page-btn {
+            width: 36px; height: 36px;
+            border-radius: 8px;
+            border: 1.5px solid var(--border);
+            background: white;
+            font-size: 13px; font-weight: 600;
+            cursor: pointer;
+            transition: all .18s;
+            font-family: inherit;
+        }
+
+        .page-btn:hover, .page-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        /* Article modal */
+        .article-overlay {
+            display: none;
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,.55);
+            z-index: 2500;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 40px 20px;
+            overflow-y: auto;
+        }
+
+        .article-overlay.open { display: flex; }
+
+        .article-box {
+            background: white;
+            border-radius: 20px;
+            width: 760px;
+            max-width: 100%;
+            padding: 52px 56px;
+            position: relative;
+            margin: auto;
+        }
+
+        .article-close {
+            position: absolute; top: 20px; right: 24px;
+            background: none; border: none;
+            font-size: 22px; cursor: pointer; color: #aaa;
+        }
+
+        .article-close:hover { color: var(--text-dark); }
+
+        .article-cat-date { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+
+        .article-box h2 { font-size: 26px; font-weight: 900; line-height: 1.4; margin-bottom: 22px; }
+
+        .article-body { font-size: 15px; color: #374151; line-height: 1.9; }
+        .article-body p { margin-bottom: 18px; }
+        .article-body h3 { font-size: 17px; font-weight: 800; margin: 28px 0 12px; color: var(--text-dark); }
+        .article-body ul { padding-left: 20px; margin-bottom: 18px; }
+        .article-body li { margin-bottom: 6px; }
+        .article-body strong { color: var(--primary); }
+
+        /* Admin panel */
+        .admin-bar {
+            display: none;
+            background: #1a1a2e;
+            color: white;
+            padding: 12px 80px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .admin-bar.show { display: flex; }
+
+        .admin-bar span { font-size: 13px; }
+
+        .admin-btns { display: flex; gap: 10px; }
+
+        .btn-admin {
+            padding: 7px 16px;
+            border-radius: 7px;
+            font-size: 13px; font-weight: 700;
+            cursor: pointer; font-family: inherit;
+            border: none;
+        }
+
+        .btn-admin-primary { background: var(--primary); color: white; }
+        .btn-admin-danger  { background: #ef4444; color: white; }
+        .btn-admin-ghost   { background: rgba(255,255,255,.15); color: white; }
+
+        .admin-form-overlay {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,.55); z-index: 3000;
+            align-items: center; justify-content: center;
+            padding: 20px;
+        }
+
+        .admin-form-overlay.open { display: flex; }
+
+        .admin-form-box {
+            background: white; border-radius: 18px;
+            width: 680px; max-width: 100%;
+            padding: 40px; max-height: 90vh;
+            overflow-y: auto; position: relative;
+        }
+
+        .admin-form-box h2 { font-size: 22px; font-weight: 900; margin-bottom: 22px; }
+
+        .admin-row { margin-bottom: 16px; }
+        .admin-row label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+
+        .admin-row input,
+        .admin-row select,
+        .admin-row textarea {
+            width: 100%; padding: 11px 14px;
+            border: 1.5px solid var(--border); border-radius: 8px;
+            font-size: 14px; font-family: inherit; outline: none;
+            transition: border-color .2s;
+        }
+
+        .admin-row input:focus,
+        .admin-row select:focus,
+        .admin-row textarea:focus { border-color: var(--primary); }
+
+        .admin-row textarea { height: 300px; resize: vertical; }
+
+        .admin-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+
+        .admin-login-overlay {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,.6); z-index: 3500;
+            align-items: center; justify-content: center;
+        }
+
+        .admin-login-overlay.open { display: flex; }
+
+        .admin-login-box {
+            background: white; border-radius: 18px;
+            padding: 44px; width: 380px; text-align: center;
+        }
+
+        .admin-login-box h2 { font-size: 22px; font-weight: 900; margin-bottom: 8px; }
+        .admin-login-box p  { font-size: 13px; color: var(--text-gray); margin-bottom: 24px; }
+
+        .admin-login-box input {
+            width: 100%; padding: 12px 16px;
+            border: 1.5px solid var(--border); border-radius: 9px;
+            font-size: 15px; font-family: inherit; outline: none;
+            margin-bottom: 14px; text-align: center;
+            letter-spacing: 3px;
+            transition: border-color .2s;
+        }
+
+        .admin-login-box input:focus { border-color: var(--primary); }
+
+        .admin-login-btn {
+            width: 100%; padding: 13px;
+            background: var(--primary); color: white;
+            border: none; border-radius: 9px;
+            font-size: 15px; font-weight: 800;
+            cursor: pointer; font-family: inherit;
+        }
+
+        .admin-login-cancel {
+            margin-top: 12px;
+            background: none; border: none;
+            font-size: 13px; color: #aaa; cursor: pointer;
+        }
+
+        .edit-del-btns {
+            display: flex; gap: 8px; margin-top: 12px;
+        }
+
+        .btn-edit {
+            padding: 5px 14px; border-radius: 6px;
+            font-size: 12px; font-weight: 700; cursor: pointer;
+            font-family: inherit; border: none;
+        }
+
+        .btn-edit-e { background: var(--primary-light); color: var(--primary); }
+        .btn-edit-d { background: #fee2e2; color: #dc2626; }
+
+        @media (max-width: 900px) {
+            .blog-hero { padding: 44px 24px 32px; }
+            .blog-main  { grid-template-columns: 1fr; padding: 28px 24px 60px; }
+            .article-box { padding: 36px 24px; }
+            .admin-bar  { padding: 12px 24px; }
+        }
+
+        /* ── TOAST ── */
+        .toast {
+            position: fixed;
+            bottom: 30px; left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            background: #1a1a2e;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 3000;
+            transition: transform .35s ease;
+            white-space: nowrap;
+        }
+
+        .toast.show { transform: translateX(-50%) translateY(0); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1100px) {
+            .services-grid { grid-template-columns: repeat(2,1fr); }
+            .hero-title { font-size: 42px; }
+        }
+
+        @media (max-width: 900px) {
+            nav { padding: 0 24px; }
+
+            .nav-links { display: none; }
+
+            .hero { flex-direction: column; padding: 50px 30px 80px; text-align: center; }
+            .hero-btns { justify-content: center; }
+            .social-row { justify-content: center; }
+            .hero-title { font-size: 38px; }
+
+            .section { padding: 56px 30px; }
+            .services-grid { grid-template-columns: 1fr; }
+
+            .process-wrap { padding: 56px 30px; }
+            .process-steps { flex-direction: column; align-items: center; gap: 32px; }
+            .step-connector { display: none; }
+
+            .cta-banner { flex-direction: column; text-align: center; padding: 52px 30px; }
+
+            footer { padding: 50px 30px 24px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+
+            .blog-wrap { padding: 50px 30px; }
+            .blog-layout, .blog-full-layout { grid-template-columns: 1fr; }
+            .blog-cards { grid-template-columns: 1fr; }
+
+            .about-hero { flex-direction: column; padding: 56px 30px; text-align: center; }
+            .stats-row { justify-content: center; }
+            .cred-section { padding: 50px 30px; }
+            .cred-grid { grid-template-columns: 1fr; }
+
+            .kids-hero { padding: 60px 30px; }
+            .kids-hero h1 { font-size: 34px; }
+            .section.kids-feat { padding: 50px 30px; }
+            .kids-grid { grid-template-columns: 1fr; }
+            .program-grid { grid-template-columns: 1fr; }
+
+            .blog-page-hero { padding: 50px 30px 36px; }
+            .blog-full-layout { padding: 30px 30px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="logo" onclick="go('home')">
+        <span class="logo-sub">솔라세무회계컨설팅</span>
+        <span class="logo-main">SOLA TAX</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a id="n-home"  class="active" onclick="go('home')">홈</a></li>
+        <li><a id="n-about"            onclick="go('about')">소개</a></li>
+        <li><a id="n-blog"             onclick="go('blog')">세무 칼럼</a></li>
+        <li><a id="n-kids"             onclick="go('kids')">키즈경제교육</a></li>
+    </ul>
+
+    <button class="btn-nav" onclick="openModal()">상담 신청하기</button>
+</nav>
+
+<!-- ══════════════ HOME PAGE ══════════════ -->
+<div class="page active" id="pg-home">
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-left">
+            <span class="hero-badge">경기도 안산 · 세무사 설나현</span>
+            <h1 class="hero-title">
+                복잡한 세금,<br>
+                <span class="accent">솔라처럼 환하게</span><br>
+                해결해 드립니다
+            </h1>
+            <p class="hero-desc">
+                개인사업자부터 법인, 프리랜서까지<br>
+                모든 세금 문제를 정확하고 신속하게.<br>
+                당신의 든든한 세무 파트너, 솔라세무회계입니다.
+            </p>
+            <div class="hero-btns">
+                <button class="btn-primary" onclick="openModal()">상담 신청하기</button>
+                <button class="btn-outline"  onclick="go('blog')">세무 칼럼 보기</button>
+            </div>
+            <p class="hero-social-label">채널 바로가기</p>
+            <div class="social-row">
+                <a class="soc-icon soc-n"  href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener" title="네이버블로그">N</a>
+                <a class="soc-icon soc-yt" href="https://www.youtube.com/@solar_tax" target="_blank" rel="noopener" title="유튜브">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                </a>
+                <a class="soc-icon soc-ig" href="https://www.instagram.com/solar_tax/" target="_blank" rel="noopener" title="인스타그램">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+                </a>
+                <a class="soc-icon soc-kk" href="http://pf.kakao.com/_DPjcb/chat" target="_blank" rel="noopener" title="카카오 채널 상담">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#3a1d1d"><path d="M12 3C6.48 3 2 6.72 2 11.3c0 2.95 1.85 5.54 4.65 7.05L5.5 22l4.18-2.2A11.7 11.7 0 0012 19.6c5.52 0 10-3.72 10-8.3C22 6.72 17.52 3 12 3z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="profile-card">
+                <div class="prof-avatar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4">
+                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 010 7.75"/>
+                    </svg>
+                </div>
+                <p class="prof-name">세무사 설나현</p>
+                <p class="prof-role">솔라세무회계컨설팅 대표</p>
+                <div class="prof-badge">
+                    <span class="star">★</span>
+                    세무사 제42310호
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" style="background:white;">
+        <div class="section-header">
+            <h2 class="section-title">맞춤형 세무 서비스</h2>
+            <p class="section-desc">고객의 상황에 맞는 최적의 절세 솔루션을 제공합니다.<br>세무사가 처음부터 끝까지 직접 담당합니다.</p>
+        </div>
+        <div class="services-grid">
+            <!-- row 1 -->
+            <div class="svc-card">
+                <div class="svc-top">
+                    <div class="svc-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    </div>
+                    <span class="svc-tag">기장 대리</span>
+                </div>
+                <p class="svc-name">개인사업자 · 법인 기장</p>
+                <p class="svc-desc">월 기장 대행부터 부가가치세, 종합소득세, 법인세 신고까지 세무 업무 전반을 처리해드립니다.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-top">
+                    <div class="svc-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                    </div>
+                    <span class="svc-tag">사전 절세</span>
+                </div>
+                <p class="svc-name">양도소득세 절세 설계</p>
+                <p class="svc-desc">부동산·주식 양도 전 사전 상담으로 절세 전략을 수립합니다. 신고 누락 없이 정확하게 처리합니다.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-top">
+                    <div class="svc-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                    </div>
+                    <span class="svc-tag">재산세</span>
+                </div>
+                <p class="svc-name">상속 · 증여 컨설팅</p>
+                <p class="svc-desc">상속·증여 전 절세 플랜 수립부터 신고 대리, 이후 개개인별 재산 관리 계획까지 전 과정을 함께합니다.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-top">
+                    <div class="svc-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+                    </div>
+                    <span class="svc-tag">법인 설립</span>
+                </div>
+                <p class="svc-name">법인 설립 컨설팅</p>
+                <p class="svc-desc">개인사업자 법인 전환 시기 검토, 법인 설립 절차 대행, 설립 후 세무 관리를 원스톱으로 지원합니다.</p>
+            </div>
+            <!-- row 2 -->
+            <div class="svc-card">
+                <div class="svc-top">
+                    <div class="svc-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <span class="svc-tag">조사 대응</span>
+                </div>
+                <p class="svc-name">세무조사 대응</p>
+                <p class="svc-desc">세무조사 사전 준비부터 현장 대응, 과세전 적부심사까지 경험 많은 세무사가 함께합니다.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-top">
+                    <div class="svc-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="11" y2="15"/></svg>
+                    </div>
+                    <span class="svc-tag">개인 신고</span>
+                </div>
+                <p class="svc-name">프리랜서 · 근로소득 신고</p>
+                <p class="svc-desc">3.3% 원천징수 프리랜서, 연말정산 놓친 항목, 이중근무자 종합소득세를 꼼꼼히 챙겨드립니다.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-top">
+                    <div class="svc-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <span class="svc-tag">부가세</span>
+                </div>
+                <p class="svc-name">부가가치세 신고</p>
+                <p class="svc-desc">일반·간이과세자 부가세 신고, 환급 극대화, 세금계산서 관리를 전문적으로 대행합니다.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-top">
+                    <div class="svc-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <span class="svc-tag">노무</span>
+                </div>
+                <p class="svc-name">4대보험 · 급여 대행</p>
+                <p class="svc-desc">직원 급여 계산, 4대보험 취득·상실 신고, 연말정산 대행으로 노무 리스크를 줄여드립니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <div class="process-wrap">
+        <div class="section-header">
+            <h2 class="section-title">이렇게 진행됩니다</h2>
+            <p class="section-desc">처음이시더라도 걱정 마세요. 세무사가 단계별로 안내해드립니다.</p>
+        </div>
+        <div style="text-align:center;margin-bottom:48px;">
+            <button class="btn-primary" onclick="openModal()" style="padding:15px 38px;font-size:16px;">
+                무료 상담 신청하기 &rarr;
+            </button>
+        </div>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-connector"></div>
+                <div class="step-num">01</div>
+                <p class="step-title">무료 상담</p>
+                <p class="step-desc">전화·방문 상담으로 상황 파악</p>
+            </div>
+            <div class="process-step">
+                <div class="step-connector"></div>
+                <div class="step-num">02</div>
+                <p class="step-title">맞춤 서비스 확정</p>
+                <p class="step-desc">필요한 세무 서비스 범위 결정</p>
+            </div>
+            <div class="process-step">
+                <div class="step-connector"></div>
+                <div class="step-num">03</div>
+                <p class="step-title">자료 제출</p>
+                <p class="step-desc">필요 서류 안내 및 간편 접수</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">04</div>
+                <p class="step-title">신고 완료</p>
+                <p class="step-desc">세무사 직접 처리 후 결과 보고</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog preview -->
+    <section class="blog-wrap">
+        <div class="blog-layout">
+            <div>
+                <div class="blog-list-header">
+                    <h2>최신 세무 칼럼</h2>
+                    <a class="view-all-link" onclick="go('blog')">전체 보기 &rarr;</a>
+                </div>
+                <div class="blog-cards">
+                    <div class="blog-card">
+                        <div class="blog-meta">
+                            <span class="blog-cat">키즈경제교육</span>
+                            <span class="blog-date">2026년 4월 12일</span>
+                        </div>
+                        <p class="blog-title">아이와 함께하는 용돈 교육, 어떻게 시작할까요?</p>
+                        <p class="blog-excerpt">아이의 건전한 경제 습관, 용돈 교육으로 시작하세요. 세무사가 직접 알려주는 실전 용돈 교육 방법입니다.</p>
+                        <span class="blog-more">자세히 보기 &rarr;</span>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-meta">
+                            <span class="blog-cat">소득세</span>
+                            <span class="blog-date">2026년 4월 7일</span>
+                        </div>
+                        <p class="blog-title">2025년 종합소득세 신고 완벽 가이드</p>
+                        <p class="blog-excerpt">종합소득세 신고 시즌! 신고 대상, 기간, 절세 방법을 한눈에 정리했습니다.</p>
+                        <span class="blog-more">자세히 보기 &rarr;</span>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-meta">
+                            <span class="blog-cat">부가가치세</span>
+                            <span class="blog-date">2026년 3월 28일</span>
+                        </div>
+                        <p class="blog-title">프리랜서를 위한 부가가치세 완전 정복</p>
+                        <p class="blog-excerpt">프리랜서라면 꼭 알아야 할 부가가치세 신고 방법과 절세 포인트를 알려드립니다.</p>
+                        <span class="blog-more">자세히 보기 &rarr;</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="sidebar-box">
+                    <h3>카테고리</h3>
+                    <ul class="cat-list">
+                        <li><span>전체보기</span><span class="cat-cnt">6</span></li>
+                        <li><span>소득세</span><span class="cat-cnt">2</span></li>
+                        <li><span>장부/회계</span><span class="cat-cnt">1</span></li>
+                        <li><span>법인세</span><span class="cat-cnt">1</span></li>
+                        <li><span>키즈경제교육</span><span class="cat-cnt">1</span></li>
+                        <li><span>부가가치세</span><span class="cat-cnt">1</span></li>
+                    </ul>
+                </div>
+                <div class="consult-box">
+                    <h3>전문가 상담이 필요하신가요?</h3>
+                    <p>초기 상담은 무료로 진행됩니다.</p>
+                    <button class="btn-blk btn-blk-fill" onclick="openModal()">상담 신청하기</button>
+                    <button class="btn-blk btn-blk-out">📞 031-522-5757</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-banner">
+        <div class="cta-text">
+            <h2>세금, 혼자 고민하지 마세요</h2>
+            <p>지금 바로 연락주시면 세무사가 직접 상담해 드립니다.</p>
+        </div>
+        <div class="cta-btns">
+            <button class="btn-cta-w" onclick="openModal()">무료 상담 신청</button>
+            <button class="btn-cta-o">📞 031-522-5757</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="logo" style="cursor:default;">
+                    <span class="logo-sub">솔라세무회계컨설팅</span>
+                    <span class="logo-main" style="display:inline-block;margin-top:4px;">SOLA TAX</span>
+                </div>
+                <p class="footer-desc">복잡하고 어려운 세금 문제, 이제 편안하게 상담하세요.<br>고객의 성공이 곧 저희의 성공입니다.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>경기도 안산시 단원구 광역서로 68, 608호<br>(고잔동, 삼영빌딩)<br><br>전화: 031-522-5757<br>팩스: 031-522-5758<br>이메일: solartax@solartax.kr</p>
+            </div>
+            <div class="footer-col">
+                <h4>SNS</h4>
+                <div class="footer-sns">
+                    <a class="soc-icon soc-yt" href="https://www.youtube.com/@solar_tax" target="_blank" rel="noopener" style="width:36px;height:36px;font-size:11px;" title="유튜브">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                    </a>
+                    <a class="soc-icon soc-ig" href="https://www.instagram.com/solar_tax/" target="_blank" rel="noopener" style="width:36px;height:36px;" title="인스타그램">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+                    </a>
+                    <a class="soc-icon soc-n" href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener" style="width:36px;height:36px;font-size:13px;font-weight:900;" title="네이버블로그">N</a>
+                    <a class="soc-icon soc-kk" href="http://pf.kakao.com/_DPjcb/chat" target="_blank" rel="noopener" style="width:36px;height:36px;" title="카카오 채널 상담">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#3a1d1d"><path d="M12 3C6.48 3 2 6.72 2 11.3c0 2.95 1.85 5.54 4.65 7.05L5.5 22l4.18-2.2A11.7 11.7 0 0012 19.6c5.52 0 10-3.72 10-8.3C22 6.72 17.52 3 12 3z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 솔라세무회계. All rights reserved.</p>
+            <div class="footer-lnks">
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- ══════════════ ABOUT PAGE ══════════════ -->
+<div class="page" id="pg-about">
+    <section class="about-hero">
+        <div class="about-pcard">
+            <div class="about-avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 010 7.75"/>
+                </svg>
+            </div>
+            <p class="about-name">설나현 세무사</p>
+            <p class="about-role">솔라세무회계컨설팅 대표</p>
+            <span class="about-license">세무사 제42310호</span>
+        </div>
+
+        <div class="about-copy">
+            <h1>고객의 세금 고민,<br><span class="accent">솔라처럼 밝게</span><br>해결해드립니다</h1>
+            <p>
+                안녕하세요, 솔라세무회계컨설팅 대표 세무사 설나현입니다.<br><br>
+                안산에서 나고 자라 지역 사회와 함께 성장해온 세무사입니다. 2017년 개업 이후
+                2026년 현재까지 10년간 안산·수도권 지역의 개인사업자, 법인, 프리랜서 고객들과
+                함께하며 세금 문제를 한 건 한 건 직접 처리해 왔습니다.<br><br>
+                복잡한 세법을 고객 눈높이에 맞게 쉽고 명확하게 설명드리고, 합법적인 절세 전략으로
+                실질적인 도움을 드리는 것이 저의 원칙입니다. 세무사가 처음부터 끝까지 직접 담당하기에
+                믿고 맡기실 수 있습니다.
+            </p>
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-num">10년</div>
+                    <div class="stat-lbl">세무사 경력</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">500+</div>
+                    <div class="stat-lbl">누적 상담 건수</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">100+</div>
+                    <div class="stat-lbl">월 기장 고객사</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cred-section">
+        <h2>학력 · 경력 · 자격</h2>
+        <div class="cred-grid">
+            <div class="cred-card">
+                <h3>학력 및 경력</h3>
+                <ul>
+                    <li>안산 동산고등학교 졸업</li>
+                    <li>세무사 자격 취득 후 2017년 개업</li>
+                    <li>솔라세무회계컨설팅 대표 (2017 ~ 현재)</li>
+                    <li>세무사 경력 10년 (2026년 기준)</li>
+                    <li>안산·수도권 지역 밀착형 세무 서비스</li>
+                </ul>
+            </div>
+            <div class="cred-card">
+                <h3>자격 및 면허</h3>
+                <ul>
+                    <li>세무사 자격증 (제42310호)</li>
+                    <li>세무사법 제4조에 의한 공인 세무사</li>
+                    <li>한국세무사회 정회원</li>
+                    <li>소득세·법인세·부가가치세 전문</li>
+                    <li>상속·증여세 / 양도소득세 전문</li>
+                </ul>
+            </div>
+            <div class="cred-card">
+                <h3>주요 업무 분야</h3>
+                <ul>
+                    <li>개인사업자 및 법인 기장 대행</li>
+                    <li>양도소득세 사전 절세 설계</li>
+                    <li>상속·증여세 플랜 수립 및 신고</li>
+                    <li>세무조사 사전 준비 및 현장 대응</li>
+                    <li>법인 설립 및 전환 컨설팅</li>
+                    <li>프리랜서·근로소득 신고 대행</li>
+                    <li>4대보험·급여 대행 (노무)</li>
+                    <li>키즈 경제 교육 기획 및 강의</li>
+                </ul>
+            </div>
+            <div class="cred-card">
+                <h3>사무소 안내 &amp; 운영 철학</h3>
+                <ul>
+                    <li>경기도 안산시 단원구 광역서로 68, 608호</li>
+                    <li>(고잔동, 삼영빌딩)</li>
+                    <li>대표전화: 031-522-5757</li>
+                    <li>팩스: 031-522-5758</li>
+                    <li>이메일: solartax@solartax.kr</li>
+                    <li>세무사 직접 담당 — 중간 전달 없음</li>
+                    <li>합법적 절세로 고객 실익 극대화</li>
+                    <li>초기 상담 무료 · 장기 파트너십 지향</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-banner">
+        <div class="cta-text">
+            <h2>궁금한 점이 있으신가요?</h2>
+            <p>초기 상담은 무료입니다. 언제든 편하게 연락주세요.</p>
+        </div>
+        <div class="cta-btns">
+            <button class="btn-cta-w" onclick="openModal()">무료 상담 신청</button>
+            <button class="btn-cta-o">📞 031-522-5757</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="logo" style="cursor:default;">
+                    <span class="logo-sub">솔라세무회계컨설팅</span>
+                    <span class="logo-main" style="display:inline-block;margin-top:4px;">SOLA TAX</span>
+                </div>
+                <p class="footer-desc">복잡하고 어려운 세금 문제, 이제 편안하게 상담하세요.<br>고객의 성공이 곧 저희의 성공입니다.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>경기도 안산시 단원구 광역서로 68, 608호<br>(고잔동, 삼영빌딩)<br><br>전화: 031-522-5757<br>팩스: 031-522-5758<br>이메일: solartax@solartax.kr</p>
+            </div>
+            <div class="footer-col">
+                <h4>SNS</h4>
+                <div class="footer-sns">
+                    <a class="soc-icon soc-yt" href="https://www.youtube.com/@solar_tax" target="_blank" rel="noopener" style="width:36px;height:36px;font-size:11px;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                    </a>
+                    <a class="soc-icon soc-ig" href="https://www.instagram.com/solar_tax/" target="_blank" rel="noopener" style="width:36px;height:36px;">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+                    </a>
+                    <a class="soc-icon soc-n" href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener" style="width:36px;height:36px;font-size:13px;font-weight:900;">N</a>
+                    <a class="soc-icon soc-kk" href="http://pf.kakao.com/_DPjcb/chat" target="_blank" rel="noopener" style="width:36px;height:36px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#3a1d1d"><path d="M12 3C6.48 3 2 6.72 2 11.3c0 2.95 1.85 5.54 4.65 7.05L5.5 22l4.18-2.2A11.7 11.7 0 0012 19.6c5.52 0 10-3.72 10-8.3C22 6.72 17.52 3 12 3z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 솔라세무회계. All rights reserved.</p>
+            <div class="footer-lnks">
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- ══════════════ BLOG PAGE ══════════════ -->
+<div class="page" id="pg-blog">
+
+    <!-- Admin bar (shown after login) -->
+    <div class="admin-bar" id="adminBar">
+        <span>🔐 관리자 모드 — 솔라세무회계컨설팅</span>
+        <div class="admin-btns">
+            <button class="btn-admin btn-admin-primary" onclick="openPostForm(null)">+ 새 글 작성</button>
+            <button class="btn-admin btn-admin-ghost"   onclick="adminLogout()">로그아웃</button>
+        </div>
+    </div>
+
+    <div class="blog-hero">
+        <h1>세무 칼럼</h1>
+        <p>세무사 설나현이 직접 쓰는 실용적인 세금 정보</p>
+        <div class="blog-search-row">
+            <input class="blog-search-input" id="searchInput" type="text" placeholder="검색어를 입력하세요..." oninput="renderBlog()">
+        </div>
+    </div>
+
+    <div class="blog-main">
+        <div>
+            <div class="blog-cats" id="catBtns"></div>
+            <div class="post-list"  id="postList"></div>
+            <div class="pagination" id="pagination"></div>
+        </div>
+
+        <div>
+            <div class="sidebar-box">
+                <h3>카테고리</h3>
+                <ul class="cat-list" id="catSidebar"></ul>
+            </div>
+            <div class="consult-box">
+                <h3>전문가 상담이 필요하신가요?</h3>
+                <p>초기 상담은 무료로 진행됩니다.</p>
+                <button class="btn-blk btn-blk-fill" onclick="openModal()">상담 신청하기</button>
+                <button class="btn-blk btn-blk-out">📞 031-522-5757</button>
+            </div>
+            <div style="margin-top:14px;text-align:right;">
+                <button onclick="openAdminLogin()" style="background:none;border:none;font-size:11px;color:#ccc;cursor:pointer;">관리자</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- placeholder so the old structure search still works -->
+    <div style="display:none" class="blog-full-list">
+            <div class="blog-full-card blog-card">
+                <div class="blog-meta">
+                    <span class="blog-cat">키즈경제교육</span>
+                    <span class="blog-date">2026년 4월 12일</span>
+                </div>
+                <p class="blog-title">아이와 함께하는 용돈 교육, 어떻게 시작할까요?</p>
+                <p class="blog-excerpt">아이의 건전한 경제 습관, 용돈 교육으로 시작하세요. 세무사가 직접 알려주는 실전 용돈 교육 방법입니다. 어릴 때부터 올바른 경제 관념을 심어주는 것이 아이의 미래를 위한 최고의 투자입니다.</p>
+                <span class="blog-more">자세히 보기 &rarr;</span>
+            </div>
+            <div class="blog-full-card blog-card">
+                <div class="blog-meta">
+                    <span class="blog-cat">소득세</span>
+                    <span class="blog-date">2026년 4월 7일</span>
+                </div>
+                <p class="blog-title">2025년 종합소득세 신고 완벽 가이드</p>
+                <p class="blog-excerpt">2025년 종합소득세 신고 시즌! 신고 대상, 기간, 절세 방법을 한눈에 정리했습니다. 프리랜서, 사업소득자, 금융소득자 모두 꼭 확인하세요.</p>
+                <span class="blog-more">자세히 보기 &rarr;</span>
+            </div>
+            <div class="blog-full-card blog-card">
+                <div class="blog-meta">
+                    <span class="blog-cat">부가가치세</span>
+                    <span class="blog-date">2026년 3월 28일</span>
+                </div>
+                <p class="blog-title">프리랜서를 위한 부가가치세 완전 정복</p>
+                <p class="blog-excerpt">프리랜서라면 꼭 알아야 할 부가가치세 신고 방법과 절세 포인트를 알려드립니다. 일반과세자와 간이과세자의 차이부터 환급 방법까지 상세하게 안내합니다.</p>
+                <span class="blog-more">자세히 보기 &rarr;</span>
+            </div>
+            <div class="blog-full-card blog-card">
+                <div class="blog-meta">
+                    <span class="blog-cat">법인세</span>
+                    <span class="blog-date">2026년 3월 15일</span>
+                </div>
+                <p class="blog-title">개인사업자 vs 법인, 언제 전환해야 할까?</p>
+                <p class="blog-excerpt">매출이 늘어날수록 법인 전환을 고민하게 됩니다. 세금 차이, 전환 시기, 절세 효과를 정확하게 분석해드립니다.</p>
+                <span class="blog-more">자세히 보기 &rarr;</span>
+            </div>
+            <div class="blog-full-card blog-card">
+                <div class="blog-meta">
+                    <span class="blog-cat">소득세</span>
+                    <span class="blog-date">2026년 2월 20일</span>
+                </div>
+                <p class="blog-title">연말정산 환급 극대화하는 7가지 방법</p>
+                <p class="blog-excerpt">놓치기 쉬운 연말정산 공제 항목들을 정리했습니다. 조금만 신경 쓰면 수십만 원을 더 환급받을 수 있습니다.</p>
+                <span class="blog-more">자세히 보기 &rarr;</span>
+            </div>
+            <div class="blog-full-card blog-card">
+                <div class="blog-meta">
+                    <span class="blog-cat">장부/회계</span>
+                    <span class="blog-date">2026년 1월 10일</span>
+                </div>
+                <p class="blog-title">사업 초보자를 위한 장부 관리 기초</p>
+                <p class="blog-excerpt">사업을 시작하면 반드시 해야 하는 장부 관리. 복식부기와 간편장부의 차이, 기장 대행이 필요한 이유를 알려드립니다.</p>
+                <span class="blog-more">자세히 보기 &rarr;</span>
+            </div>
+        </div>
+
+        <div>
+            <div class="sidebar-box">
+                <h3>카테고리</h3>
+                <ul class="cat-list">
+                    <li><span>전체보기</span><span class="cat-cnt">6</span></li>
+                    <li><span>소득세</span><span class="cat-cnt">2</span></li>
+                    <li><span>장부/회계</span><span class="cat-cnt">1</span></li>
+                    <li><span>법인세</span><span class="cat-cnt">1</span></li>
+                    <li><span>키즈경제교육</span><span class="cat-cnt">1</span></li>
+                    <li><span>부가가치세</span><span class="cat-cnt">1</span></li>
+                </ul>
+            </div>
+            <div class="consult-box">
+                <h3>전문가 상담이 필요하신가요?</h3>
+                <p>초기 상담은 무료로 진행됩니다.</p>
+                <button class="btn-blk btn-blk-fill" onclick="openModal()">상담 신청하기</button>
+                <button class="btn-blk btn-blk-out">📞 031-522-5757</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-banner">
+        <div class="cta-text">
+            <h2>세금, 혼자 고민하지 마세요</h2>
+            <p>지금 바로 연락주시면 세무사가 직접 상담해 드립니다.</p>
+        </div>
+        <div class="cta-btns">
+            <button class="btn-cta-w" onclick="openModal()">무료 상담 신청</button>
+            <button class="btn-cta-o">📞 031-522-5757</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="logo" style="cursor:default;">
+                    <span class="logo-sub">솔라세무회계컨설팅</span>
+                    <span class="logo-main" style="display:inline-block;margin-top:4px;">SOLA TAX</span>
+                </div>
+                <p class="footer-desc">복잡하고 어려운 세금 문제, 이제 편안하게 상담하세요.<br>고객의 성공이 곧 저희의 성공입니다.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>경기도 안산시 단원구 광역서로 68, 608호<br>(고잔동, 삼영빌딩)<br><br>전화: 031-522-5757<br>팩스: 031-522-5758<br>이메일: solartax@solartax.kr</p>
+            </div>
+            <div class="footer-col">
+                <h4>SNS</h4>
+                <div class="footer-sns">
+                    <a class="soc-icon soc-yt" href="https://www.youtube.com/@solar_tax" target="_blank" rel="noopener" style="width:36px;height:36px;font-size:11px;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                    </a>
+                    <a class="soc-icon soc-ig" href="https://www.instagram.com/solar_tax/" target="_blank" rel="noopener" style="width:36px;height:36px;">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+                    </a>
+                    <a class="soc-icon soc-n" href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener" style="width:36px;height:36px;font-size:13px;font-weight:900;">N</a>
+                    <a class="soc-icon soc-kk" href="http://pf.kakao.com/_DPjcb/chat" target="_blank" rel="noopener" style="width:36px;height:36px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#3a1d1d"><path d="M12 3C6.48 3 2 6.72 2 11.3c0 2.95 1.85 5.54 4.65 7.05L5.5 22l4.18-2.2A11.7 11.7 0 0012 19.6c5.52 0 10-3.72 10-8.3C22 6.72 17.52 3 12 3z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 솔라세무회계. All rights reserved.</p>
+            <div class="footer-lnks">
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- ══════════════ KIDS PAGE ══════════════ -->
+<div class="page" id="pg-kids">
+    <section class="kids-hero">
+        <div class="kids-hero-badge">세무사가 알려주는 경제 교육</div>
+        <h1>🌱 키즈 경제 교육</h1>
+        <p>아이들에게 올바른 경제 관념과 금융 지식을 심어주세요.<br>세무사가 직접 설계한 실생활 밀착형 경제 교육 프로그램입니다.</p>
+        <button class="btn-primary" onclick="openModal()" style="padding:15px 36px;font-size:16px;">교육 신청하기</button>
+    </section>
+
+    <section class="section kids-feat">
+        <div class="section-header">
+            <h2 class="section-title">왜 키즈 경제 교육인가요?</h2>
+            <p class="section-desc">어릴 때부터 배우는 경제 감각이 평생의 재정 건강을 만듭니다</p>
+        </div>
+        <div class="kids-grid">
+            <div class="kids-card">
+                <div class="kids-emoji">💰</div>
+                <h3>용돈 관리 교육</h3>
+                <p>받은 용돈을 어떻게 쓰고, 저축하고, 나눌지 스스로 결정하는 습관을 길러줍니다. 소비와 저축의 균형을 자연스럽게 배웁니다.</p>
+            </div>
+            <div class="kids-card">
+                <div class="kids-emoji">🏦</div>
+                <h3>저축과 투자의 개념</h3>
+                <p>은행이 무엇인지, 이자가 어떻게 생기는지, 투자란 무엇인지 어린이 눈높이에 맞게 쉽고 재미있게 설명합니다.</p>
+            </div>
+            <div class="kids-card">
+                <div class="kids-emoji">📊</div>
+                <h3>세금 이해하기</h3>
+                <p>세금이 왜 필요한지, 우리 생활에 어떻게 쓰이는지를 알려줍니다. 납세의 의무를 이해하는 건강한 미래 시민을 키웁니다.</p>
+            </div>
+            <div class="kids-card">
+                <div class="kids-emoji">🎯</div>
+                <h3>목표 설정과 달성</h3>
+                <p>갖고 싶은 것을 위해 저축 목표를 세우고, 계획대로 실천하는 경험을 통해 재정적 자기 통제력을 키웁니다.</p>
+            </div>
+            <div class="kids-card">
+                <div class="kids-emoji">🤝</div>
+                <h3>나눔과 기부 문화</h3>
+                <p>소득의 일부를 나누는 기부 문화를 어릴 때부터 경험하게 합니다. 경제적 능력과 함께 사회적 책임감도 배웁니다.</p>
+            </div>
+            <div class="kids-card">
+                <div class="kids-emoji">💡</div>
+                <h3>창의적 경제 활동</h3>
+                <p>미니 마켓 운영, 용돈 기입장 작성 등 실습 중심의 활동으로 경제 개념을 직접 체험하며 익힙니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding:60px 80px;background:var(--bg-cream);">
+        <div class="section-header">
+            <h2 class="section-title">교육 프로그램 안내</h2>
+            <p class="section-desc">연령별 맞춤 커리큘럼으로 경제 개념을 단계적으로 쌓아갑니다</p>
+        </div>
+        <div class="program-grid">
+            <div class="prog-card">
+                <p class="prog-label">초등 저학년 (1–3학년)</p>
+                <h3>용돈의 씨앗</h3>
+                <ul>
+                    <li>돈이란 무엇인가</li>
+                    <li>용돈 받고 쓰기</li>
+                    <li>저금통 만들기</li>
+                    <li>원하는 것 vs 필요한 것</li>
+                </ul>
+            </div>
+            <div class="prog-card">
+                <p class="prog-label">초등 고학년 (4–6학년)</p>
+                <h3>경제의 나무</h3>
+                <ul>
+                    <li>수입과 지출 관리</li>
+                    <li>저축과 이자 개념</li>
+                    <li>미니 창업 체험</li>
+                    <li>세금의 역할 이해</li>
+                </ul>
+            </div>
+            <div class="prog-card">
+                <p class="prog-label">중학생</p>
+                <h3>금융의 숲</h3>
+                <ul>
+                    <li>금융 상품 이해</li>
+                    <li>투자와 리스크</li>
+                    <li>신용카드와 부채</li>
+                    <li>미래 재무 계획</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-banner">
+        <div class="cta-text">
+            <h2>아이의 경제 교육을 시작하세요</h2>
+            <p>세무사가 직접 설계한 실생활 밀착형 경제 교육 프로그램입니다.</p>
+        </div>
+        <div class="cta-btns">
+            <button class="btn-cta-w" onclick="openModal()">교육 신청하기</button>
+            <button class="btn-cta-o">📞 031-522-5757</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="logo" style="cursor:default;">
+                    <span class="logo-sub">솔라세무회계컨설팅</span>
+                    <span class="logo-main" style="display:inline-block;margin-top:4px;">SOLA TAX</span>
+                </div>
+                <p class="footer-desc">복잡하고 어려운 세금 문제, 이제 편안하게 상담하세요.<br>고객의 성공이 곧 저희의 성공입니다.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>경기도 안산시 단원구 광역서로 68, 608호<br>(고잔동, 삼영빌딩)<br><br>전화: 031-522-5757<br>팩스: 031-522-5758<br>이메일: solartax@solartax.kr</p>
+            </div>
+            <div class="footer-col">
+                <h4>SNS</h4>
+                <div class="footer-sns">
+                    <a class="soc-icon soc-yt" href="https://www.youtube.com/@solar_tax" target="_blank" rel="noopener" style="width:36px;height:36px;font-size:11px;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                    </a>
+                    <a class="soc-icon soc-ig" href="https://www.instagram.com/solar_tax/" target="_blank" rel="noopener" style="width:36px;height:36px;">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+                    </a>
+                    <a class="soc-icon soc-n" href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener" style="width:36px;height:36px;font-size:13px;font-weight:900;">N</a>
+                    <a class="soc-icon soc-kk" href="http://pf.kakao.com/_DPjcb/chat" target="_blank" rel="noopener" style="width:36px;height:36px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#3a1d1d"><path d="M12 3C6.48 3 2 6.72 2 11.3c0 2.95 1.85 5.54 4.65 7.05L5.5 22l4.18-2.2A11.7 11.7 0 0012 19.6c5.52 0 10-3.72 10-8.3C22 6.72 17.52 3 12 3z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 솔라세무회계. All rights reserved.</p>
+            <div class="footer-lnks">
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- ══════════════ MODAL ══════════════ -->
+<div class="modal-bg" id="modal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        <h2>무료 상담 신청</h2>
+        <p class="modal-sub">세무사 설나현이 직접 연락드립니다. 초기 상담은 무료입니다.</p>
+
+        <div class="form-row">
+            <label>이름 *</label>
+            <input type="text" id="f-name" placeholder="홍길동">
+        </div>
+        <div class="form-row">
+            <label>연락처 *</label>
+            <input type="tel" id="f-tel" placeholder="010-0000-0000">
+        </div>
+        <div class="form-row">
+            <label>이메일</label>
+            <input type="email" id="f-email" placeholder="example@email.com">
+        </div>
+        <div class="form-row">
+            <label>상담 분야 *</label>
+            <select id="f-type">
+                <option value="">선택해 주세요</option>
+                <option>개인사업자·법인 기장</option>
+                <option>양도소득세 절세 설계</option>
+                <option>상속·증여 컨설팅</option>
+                <option>법인 설립 컨설팅</option>
+                <option>세무조사 대응</option>
+                <option>프리랜서·근로소득 신고</option>
+                <option>부가가치세 신고</option>
+                <option>4대보험·급여 대행</option>
+                <option>키즈 경제 교육</option>
+                <option>기타</option>
+            </select>
+        </div>
+        <div class="form-row">
+            <label>문의 내용</label>
+            <textarea id="f-msg" placeholder="궁금한 사항을 자유롭게 작성해주세요."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">상담 신청하기</button>
+    </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">상담 신청이 완료되었습니다. 빠르게 연락드리겠습니다!</div>
+
+<script>
+    function go(page) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById('pg-' + page).classList.add('active');
+        document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+        document.getElementById('n-' + page).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openModal() {
+        document.getElementById('modal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('modal').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function submitForm() {
+        const name = document.getElementById('f-name').value.trim();
+        const tel  = document.getElementById('f-tel').value.trim();
+        const type = document.getElementById('f-type').value;
+        if (!name || !tel || !type) {
+            alert('이름, 연락처, 상담 분야는 필수 입력 항목입니다.');
+            return;
+        }
+        closeModal();
+        ['f-name','f-tel','f-email','f-msg'].forEach(id => document.getElementById(id).value = '');
+        document.getElementById('f-type').value = '';
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+
+    document.getElementById('modal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+</script>
+</body>
+</html>
