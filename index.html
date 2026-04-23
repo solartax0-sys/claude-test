@@ -794,99 +794,92 @@
         .form-submit:hover { background: var(--primary-dark); }
 
         /* ── BLOG SYSTEM ── */
-        .blog-hero {
-            background: var(--bg-cream);
-            padding: 56px 80px 40px;
+        /* ── COLUMN PAGE ── */
+        .col-hero {
+            background: white;
+            padding: 64px 80px 0;
+        }
+        .col-hero h1 { font-size: 38px; font-weight: 900; margin-bottom: 10px; }
+        .col-hero p  { color: var(--text-gray); font-size: 15px; margin-bottom: 36px; }
+
+        .col-tabs {
+            display: flex;
             border-bottom: 1px solid var(--border);
+            overflow-x: auto;
         }
-
-        .blog-hero h1 { font-size: 36px; font-weight: 900; margin-bottom: 8px; }
-        .blog-hero p  { color: var(--text-gray); font-size: 15px; margin-bottom: 28px; }
-
-        .blog-search-row {
-            display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
-        }
-
-        .blog-search-input {
-            flex: 1; min-width: 220px;
-            padding: 11px 16px;
-            border: 1.5px solid var(--border);
-            border-radius: 9px;
-            font-size: 14px;
-            font-family: inherit;
-            outline: none;
-            transition: border-color .2s;
-        }
-
-        .blog-search-input:focus { border-color: var(--primary); }
-
-        .blog-main { display: grid; grid-template-columns: 1fr 280px; gap: 36px; padding: 36px 80px 80px; }
-
-        .blog-cats {
-            display: flex; flex-wrap: wrap; gap: 8px;
-            margin-bottom: 24px;
-        }
-
-        .cat-btn {
-            padding: 7px 16px;
-            border-radius: 20px;
-            border: 1.5px solid var(--border);
-            background: white;
-            font-size: 13px; font-weight: 600;
+        .col-tab {
+            padding: 14px 22px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-gray);
             cursor: pointer;
-            transition: all .18s;
-            font-family: inherit;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -1px;
+            white-space: nowrap;
+            transition: color .18s, border-color .18s;
+        }
+        .col-tab.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 700; }
+        .col-tab:hover:not(.active) { color: var(--text-dark); }
+
+        .col-grid-wrap { padding: 48px 80px 80px; }
+
+        .col-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
         }
 
-        .cat-btn:hover, .cat-btn.active {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: white;
-        }
-
-        .post-list { display: flex; flex-direction: column; gap: 14px; }
-
-        .post-item {
-            border: 1.5px solid var(--border);
+        .col-card {
             border-radius: 16px;
-            padding: 24px 26px;
+            overflow: hidden;
+            border: 1px solid var(--border);
             cursor: pointer;
-            transition: transform .18s, box-shadow .18s, border-color .18s;
             background: white;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .col-card:hover { transform: translateY(-5px); box-shadow: 0 10px 28px rgba(0,0,0,.1); }
+
+        .col-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            background: var(--bg-gray);
         }
 
-        .post-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 22px rgba(242,159,5,.12);
-            border-color: rgba(242,159,5,.4);
+        .col-card-body { padding: 20px 22px 24px; }
+
+        .col-card-tags { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+
+        .col-card-tag {
+            background: var(--bg-gray);
+            color: var(--text-gray);
+            font-size: 11.5px;
+            font-weight: 600;
+            padding: 4px 11px;
+            border-radius: 20px;
         }
 
-        .post-item-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .post-item-left { display: flex; align-items: center; gap: 10px; }
-
-        .post-item h3 { font-size: 16px; font-weight: 800; margin-bottom: 7px; line-height: 1.45; }
-        .post-item p  { font-size: 13px; color: var(--text-gray); line-height: 1.6; }
-
-        .pagination {
-            display: flex; justify-content: center; align-items: center;
-            gap: 6px; margin-top: 32px;
+        .col-card-title {
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
-        .page-btn {
-            width: 36px; height: 36px;
-            border-radius: 8px;
-            border: 1.5px solid var(--border);
-            background: white;
-            font-size: 13px; font-weight: 600;
-            cursor: pointer;
-            transition: all .18s;
-            font-family: inherit;
-        }
-
-        .page-btn:hover, .page-btn.active {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: white;
+        .col-card-excerpt {
+            font-size: 13px;
+            color: var(--text-gray);
+            line-height: 1.65;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         /* Article modal */
@@ -932,131 +925,11 @@
         .article-body li { margin-bottom: 6px; }
         .article-body strong { color: var(--primary); }
 
-        /* Admin panel */
-        .admin-bar {
-            display: none;
-            background: #1a1a2e;
-            color: white;
-            padding: 12px 80px;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .admin-bar.show { display: flex; }
-
-        .admin-bar span { font-size: 13px; }
-
-        .admin-btns { display: flex; gap: 10px; }
-
-        .btn-admin {
-            padding: 7px 16px;
-            border-radius: 7px;
-            font-size: 13px; font-weight: 700;
-            cursor: pointer; font-family: inherit;
-            border: none;
-        }
-
-        .btn-admin-primary { background: var(--primary); color: white; }
-        .btn-admin-danger  { background: #ef4444; color: white; }
-        .btn-admin-ghost   { background: rgba(255,255,255,.15); color: white; }
-
-        .admin-form-overlay {
-            display: none; position: fixed; inset: 0;
-            background: rgba(0,0,0,.55); z-index: 3000;
-            align-items: center; justify-content: center;
-            padding: 20px;
-        }
-
-        .admin-form-overlay.open { display: flex; }
-
-        .admin-form-box {
-            background: white; border-radius: 18px;
-            width: 680px; max-width: 100%;
-            padding: 40px; max-height: 90vh;
-            overflow-y: auto; position: relative;
-        }
-
-        .admin-form-box h2 { font-size: 22px; font-weight: 900; margin-bottom: 22px; }
-
-        .admin-row { margin-bottom: 16px; }
-        .admin-row label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
-
-        .admin-row input,
-        .admin-row select,
-        .admin-row textarea {
-            width: 100%; padding: 11px 14px;
-            border: 1.5px solid var(--border); border-radius: 8px;
-            font-size: 14px; font-family: inherit; outline: none;
-            transition: border-color .2s;
-        }
-
-        .admin-row input:focus,
-        .admin-row select:focus,
-        .admin-row textarea:focus { border-color: var(--primary); }
-
-        .admin-row textarea { height: 300px; resize: vertical; }
-
-        .admin-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
-
-        .admin-login-overlay {
-            display: none; position: fixed; inset: 0;
-            background: rgba(0,0,0,.6); z-index: 3500;
-            align-items: center; justify-content: center;
-        }
-
-        .admin-login-overlay.open { display: flex; }
-
-        .admin-login-box {
-            background: white; border-radius: 18px;
-            padding: 44px; width: 380px; text-align: center;
-        }
-
-        .admin-login-box h2 { font-size: 22px; font-weight: 900; margin-bottom: 8px; }
-        .admin-login-box p  { font-size: 13px; color: var(--text-gray); margin-bottom: 24px; }
-
-        .admin-login-box input {
-            width: 100%; padding: 12px 16px;
-            border: 1.5px solid var(--border); border-radius: 9px;
-            font-size: 15px; font-family: inherit; outline: none;
-            margin-bottom: 14px; text-align: center;
-            letter-spacing: 3px;
-            transition: border-color .2s;
-        }
-
-        .admin-login-box input:focus { border-color: var(--primary); }
-
-        .admin-login-btn {
-            width: 100%; padding: 13px;
-            background: var(--primary); color: white;
-            border: none; border-radius: 9px;
-            font-size: 15px; font-weight: 800;
-            cursor: pointer; font-family: inherit;
-        }
-
-        .admin-login-cancel {
-            margin-top: 12px;
-            background: none; border: none;
-            font-size: 13px; color: #aaa; cursor: pointer;
-        }
-
-        .edit-del-btns {
-            display: flex; gap: 8px; margin-top: 12px;
-        }
-
-        .btn-edit {
-            padding: 5px 14px; border-radius: 6px;
-            font-size: 12px; font-weight: 700; cursor: pointer;
-            font-family: inherit; border: none;
-        }
-
-        .btn-edit-e { background: var(--primary-light); color: var(--primary); }
-        .btn-edit-d { background: #fee2e2; color: #dc2626; }
-
         @media (max-width: 900px) {
-            .blog-hero { padding: 44px 24px 32px; }
-            .blog-main  { grid-template-columns: 1fr; padding: 28px 24px 60px; }
+            .col-hero { padding: 44px 24px 0; }
+            .col-grid-wrap { padding: 32px 24px 60px; }
+            .col-grid { grid-template-columns: 1fr; gap: 18px; }
             .article-box { padding: 36px 24px; }
-            .admin-bar  { padding: 12px 24px; }
         }
 
         /* ── TOAST ── */
@@ -1106,7 +979,7 @@
             .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 
             .blog-wrap { padding: 50px 30px; }
-            .blog-layout, .blog-full-layout { grid-template-columns: 1fr; }
+            .blog-layout { grid-template-columns: 1fr; }
             .blog-cards { grid-template-columns: 1fr; }
 
             .about-hero { flex-direction: column; padding: 56px 30px; text-align: center; }
@@ -1120,8 +993,7 @@
             .kids-grid { grid-template-columns: 1fr; }
             .program-grid { grid-template-columns: 1fr; }
 
-            .blog-page-hero { padding: 50px 30px 36px; }
-            .blog-full-layout { padding: 30px 30px 60px; }
+            .col-grid { grid-template-columns: 1fr; gap: 18px; }
         }
     </style>
 </head>
@@ -1623,104 +1495,22 @@
 <!-- ══════════════ BLOG PAGE ══════════════ -->
 <div class="page" id="pg-blog">
 
-    <!-- Admin bar (shown after login) -->
-    <div class="admin-bar" id="adminBar">
-        <span>🔐 관리자 모드 — 솔라세무회계컨설팅</span>
-        <div class="admin-btns">
-            <button class="btn-admin btn-admin-primary" onclick="openPostForm(null)">+ 새 글 작성</button>
-            <button class="btn-admin btn-admin-ghost"   onclick="adminLogout()">로그아웃</button>
-        </div>
-    </div>
-
-    <div class="blog-hero">
+    <div class="col-hero">
         <h1>세무 칼럼</h1>
         <p>세무사 설나현이 직접 쓰는 실용적인 세금 정보</p>
-        <div class="blog-search-row">
-            <input class="blog-search-input" id="searchInput" type="text" placeholder="검색어를 입력하세요..." oninput="renderBlog()">
+        <div class="col-tabs">
+            <div class="col-tab active"  onclick="filterCol(this,'전체')">전체</div>
+            <div class="col-tab" onclick="filterCol(this,'소득세')">소득세</div>
+            <div class="col-tab" onclick="filterCol(this,'장부/회계')">장부/회계</div>
+            <div class="col-tab" onclick="filterCol(this,'법인세')">법인세</div>
+            <div class="col-tab" onclick="filterCol(this,'키즈경제교육')">키즈경제교육</div>
+            <div class="col-tab" onclick="filterCol(this,'부가가치세')">부가가치세</div>
         </div>
     </div>
 
-    <div class="blog-main">
-        <div>
-            <div class="blog-cats" id="catBtns"></div>
-            <div class="post-list"  id="postList"></div>
-            <div class="pagination" id="pagination"></div>
-        </div>
-
-        <div>
-            <div class="sidebar-box">
-                <h3>카테고리</h3>
-                <ul class="cat-list" id="catSidebar"></ul>
-            </div>
-            <div class="consult-box">
-                <h3>전문가 상담이 필요하신가요?</h3>
-                <p>초기 상담은 무료로 진행됩니다.</p>
-                <button class="btn-blk btn-blk-fill" onclick="openModal()">상담 신청하기</button>
-                <button class="btn-blk btn-blk-out">📞 031-522-5757</button>
-            </div>
-            <div style="margin-top:14px;text-align:right;">
-                <button onclick="openAdminLogin()" style="background:none;border:none;font-size:11px;color:#ccc;cursor:pointer;">관리자</button>
-            </div>
-        </div>
+    <div class="col-grid-wrap">
+        <div class="col-grid" id="colGrid"></div>
     </div>
-
-    <!-- placeholder so the old structure search still works -->
-    <div style="display:none" class="blog-full-list">
-            <div class="blog-full-card blog-card">
-                <div class="blog-meta">
-                    <span class="blog-cat">키즈경제교육</span>
-                    <span class="blog-date">2026년 4월 12일</span>
-                </div>
-                <p class="blog-title">아이와 함께하는 용돈 교육, 어떻게 시작할까요?</p>
-                <p class="blog-excerpt">아이의 건전한 경제 습관, 용돈 교육으로 시작하세요. 세무사가 직접 알려주는 실전 용돈 교육 방법입니다. 어릴 때부터 올바른 경제 관념을 심어주는 것이 아이의 미래를 위한 최고의 투자입니다.</p>
-                <span class="blog-more">자세히 보기 &rarr;</span>
-            </div>
-            <div class="blog-full-card blog-card">
-                <div class="blog-meta">
-                    <span class="blog-cat">소득세</span>
-                    <span class="blog-date">2026년 4월 7일</span>
-                </div>
-                <p class="blog-title">2025년 종합소득세 신고 완벽 가이드</p>
-                <p class="blog-excerpt">2025년 종합소득세 신고 시즌! 신고 대상, 기간, 절세 방법을 한눈에 정리했습니다. 프리랜서, 사업소득자, 금융소득자 모두 꼭 확인하세요.</p>
-                <span class="blog-more">자세히 보기 &rarr;</span>
-            </div>
-            <div class="blog-full-card blog-card">
-                <div class="blog-meta">
-                    <span class="blog-cat">부가가치세</span>
-                    <span class="blog-date">2026년 3월 28일</span>
-                </div>
-                <p class="blog-title">프리랜서를 위한 부가가치세 완전 정복</p>
-                <p class="blog-excerpt">프리랜서라면 꼭 알아야 할 부가가치세 신고 방법과 절세 포인트를 알려드립니다. 일반과세자와 간이과세자의 차이부터 환급 방법까지 상세하게 안내합니다.</p>
-                <span class="blog-more">자세히 보기 &rarr;</span>
-            </div>
-            <div class="blog-full-card blog-card">
-                <div class="blog-meta">
-                    <span class="blog-cat">법인세</span>
-                    <span class="blog-date">2026년 3월 15일</span>
-                </div>
-                <p class="blog-title">개인사업자 vs 법인, 언제 전환해야 할까?</p>
-                <p class="blog-excerpt">매출이 늘어날수록 법인 전환을 고민하게 됩니다. 세금 차이, 전환 시기, 절세 효과를 정확하게 분석해드립니다.</p>
-                <span class="blog-more">자세히 보기 &rarr;</span>
-            </div>
-            <div class="blog-full-card blog-card">
-                <div class="blog-meta">
-                    <span class="blog-cat">소득세</span>
-                    <span class="blog-date">2026년 2월 20일</span>
-                </div>
-                <p class="blog-title">연말정산 환급 극대화하는 7가지 방법</p>
-                <p class="blog-excerpt">놓치기 쉬운 연말정산 공제 항목들을 정리했습니다. 조금만 신경 쓰면 수십만 원을 더 환급받을 수 있습니다.</p>
-                <span class="blog-more">자세히 보기 &rarr;</span>
-            </div>
-            <div class="blog-full-card blog-card">
-                <div class="blog-meta">
-                    <span class="blog-cat">장부/회계</span>
-                    <span class="blog-date">2026년 1월 10일</span>
-                </div>
-                <p class="blog-title">사업 초보자를 위한 장부 관리 기초</p>
-                <p class="blog-excerpt">사업을 시작하면 반드시 해야 하는 장부 관리. 복식부기와 간편장부의 차이, 기장 대행이 필요한 이유를 알려드립니다.</p>
-                <span class="blog-more">자세히 보기 &rarr;</span>
-            </div>
-        </div>
 
     <div class="cta-banner">
         <div class="cta-text">
@@ -1956,6 +1746,143 @@
 <div class="toast" id="toast">상담 신청이 완료되었습니다. 빠르게 연락드리겠습니다!</div>
 
 <script>
+    /* ── 세무 칼럼 데이터 ── */
+    const POSTS = [
+        // 소득세
+        {cat:'소득세', img:'https://picsum.photos/seed/10/400/260', title:'2025년 종합소득세 신고 완벽 가이드', excerpt:'신고 대상, 기간, 절세 방법을 한눈에 정리했습니다. 프리랜서, 사업소득자, 금융소득자 모두 꼭 확인하세요.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/11/400/260', title:'연말정산 환급 극대화하는 7가지 방법', excerpt:'놓치기 쉬운 연말정산 공제 항목들을 정리했습니다. 조금만 신경 쓰면 수십만 원을 더 환급받을 수 있습니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/12/400/260', title:'프리랜서 소득세 절세 전략 완벽 가이드', excerpt:'필요경비 처리부터 신고까지, 프리랜서라면 꼭 알아야 할 소득세 절세 전략을 정리했습니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/13/400/260', title:'근로소득공제 vs 필요경비, 어떤 게 유리할까?', excerpt:'사례로 비교하는 절세 방법. 같은 소득이라도 신고 방식에 따라 세금이 크게 달라집니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/14/400/260', title:'부업 소득 어떻게 신고해야 할까?', excerpt:'원천징수부터 종합신고까지, 투잡·부업 소득을 신고하는 정확한 방법을 알려드립니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/15/400/260', title:'금융투자소득세 2025년 변화 총정리', excerpt:'달라지는 세금, 미리 준비하세요. 주식·채권·펀드 투자자가 반드시 알아야 할 세금 변화입니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/16/400/260', title:'해외 주식 양도소득세 신고 방법', excerpt:'해외 투자자라면 꼭 알아야 할 신고 절차. 환율 환산부터 신고 기한까지 완벽하게 정리했습니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/17/400/260', title:'배당소득 세금 완벽 이해', excerpt:'분리과세와 종합과세 중 유리한 선택은? 배당소득 2천만 원 기준의 세금 전략을 알려드립니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/18/400/260', title:'사업소득 vs 근로소득 세금 차이 총정리', excerpt:'직장인 vs 사업자 절세 전략. 같은 수입이어도 소득 종류에 따라 세금이 완전히 달라집니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/19/400/260', title:'소득세 중간예납 완벽 이해', excerpt:'왜 내야 하고 어떻게 줄일 수 있을까? 11월 중간예납을 현명하게 대처하는 방법입니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/20/400/260', title:'결손금 소급공제로 소득세 환급받기', excerpt:'폐업·사업 부진 시 활용법. 전년도 이익에 소급 적용해 이미 낸 세금을 돌려받는 방법입니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/21/400/260', title:'성실신고확인제도 완벽 가이드', excerpt:'대상자와 세액공제 혜택까지. 고소득 사업자라면 성실신고 확인을 통한 절세를 검토하세요.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/22/400/260', title:'소득세 추계결정 vs 실액신고 선택 방법', excerpt:'나에게 유리한 신고 방식은? 업종별 기준경비율과 실액신고 비교 분석을 제공합니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/23/400/260', title:'유튜버·인플루언서 소득세 신고 가이드', excerpt:'광고 수익 세금 처리 방법. 구글 애드센스, 협찬, 제품 리뷰 수익의 신고 방법을 정리했습니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/24/400/260', title:'소득세 경정청구 방법 완벽 정리', excerpt:'잘못 낸 세금, 5년 안에 돌려받을 수 있습니다. 경정청구 대상과 신청 절차를 안내합니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/25/400/260', title:'이자소득세 얼마나 내야 할까?', excerpt:'금융소득 세금 완벽 이해. 예금이자, 채권이자의 세금 처리와 절세 전략을 알려드립니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/26/400/260', title:'기타소득 신고 놓치면 가산세', excerpt:'강의료, 원고료, 상금의 세금 처리. 놓치기 쉬운 기타소득 신고 의무를 총정리했습니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/27/400/260', title:'일용직 근로자의 소득세 신고 방법', excerpt:'일당 187,000원 기준의 비밀. 일용직 세금 계산 방법과 절세 포인트를 안내합니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/28/400/260', title:'소득세 비과세 항목 총정리', excerpt:'합법적으로 세금 안 내는 방법. 식대, 자가운전보조금, 육아휴직급여 등 비과세 항목을 정리했습니다.'},
+        {cat:'소득세', img:'https://picsum.photos/seed/29/400/260', title:'2026년 달라지는 소득세 주요 변경사항', excerpt:'미리 알고 준비하세요. 공제 한도 변경, 세율 조정 등 소득세 주요 변경사항을 총정리했습니다.'},
+
+        // 장부/회계
+        {cat:'장부/회계', img:'https://picsum.photos/seed/30/400/260', title:'사업 초보자를 위한 장부 관리 기초', excerpt:'복식부기와 간편장부 선택 방법. 사업을 시작하면 반드시 해야 하는 장부 관리의 기초를 설명합니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/31/400/260', title:'복식부기 의무자 기준과 장점', excerpt:'매출 기준과 업종별 차이 총정리. 복식부기를 해야 하는 사업자와 절세 혜택을 안내합니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/32/400/260', title:'간편장부 작성법 완벽 가이드', excerpt:'사업자가 직접 작성할 수 있는 실전 방법. 간편장부 형식과 기록 방법을 쉽게 설명합니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/33/400/260', title:'경비 처리 어디까지 되나?', excerpt:'실전 기준으로 알아보는 비용 처리 범위. 세무조사에서도 인정받는 경비 처리 기준을 정리했습니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/34/400/260', title:'사업용 신용카드 등록의 중요성', excerpt:'세금계산서 없이도 경비 처리하는 방법. 사업용 카드 등록만으로 절세가 가능한 이유를 설명합니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/35/400/260', title:'현금영수증 의무발행 업종과 미발행 시 불이익', excerpt:'위반 시 가산세 총정리. 현금영수증을 반드시 발행해야 하는 업종과 미발행 패널티를 알려드립니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/36/400/260', title:'세금계산서 발행·수취 완벽 정리', excerpt:'전자세금계산서 의무화 시대 대비. 세금계산서 발행 기한과 수취 시 주의사항을 정리했습니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/37/400/260', title:'매출·비용 장부 관리 실전 가이드', excerpt:'엑셀로 시작하는 쉬운 장부 관리. 실제 사용 가능한 엑셀 장부 양식과 기록 방법을 제공합니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/38/400/260', title:'재고자산 평가 방법과 절세 전략', excerpt:'선입선출법 vs 총평균법 선택 기준. 재고 평가 방법에 따라 세금이 달라지는 원리를 설명합니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/39/400/260', title:'감가상각 이해하고 절세에 활용하기', excerpt:'자산별 내용연수와 상각 방법. 정액법·정률법 선택에 따른 절세 효과를 비교 분석합니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/40/400/260', title:'가수금·가지급금 정리가 중요한 이유', excerpt:'세무조사 대비 필수 체크사항. 법인 장부에서 가장 많이 지적되는 계정과목 처리 방법입니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/41/400/260', title:'기장 대행 vs 직접 기장 무엇이 유리할까?', excerpt:'비용 대비 효과 분석. 매출 규모별로 기장 대행이 유리한 기준점을 알려드립니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/42/400/260', title:'결산 정리 분개 핵심 정리', excerpt:'사업자가 알아야 할 결산 처리 방법. 연말 결산 시 반드시 처리해야 할 분개 항목을 안내합니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/43/400/260', title:'재무제표 읽는 법 사업자 필수 지식', excerpt:'재무상태표, 손익계산서를 이해하면 절세가 보입니다. 사업자를 위한 재무제표 해석 가이드입니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/44/400/260', title:'업무용 차량 경비처리 완벽 가이드', excerpt:'운행일지 작성부터 한도까지. 업무용 차량 구입·운행 비용을 최대한 경비 처리하는 방법입니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/45/400/260', title:'접대비 한도와 증빙 처리 방법', excerpt:'거래처 선물·식사 경비 처리 기준. 접대비 손금한도 계산과 증빙 관리 방법을 알려드립니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/46/400/260', title:'인건비 경비처리와 4대보험 연계 전략', excerpt:'합법적 절세의 핵심. 가족 직원 등록, 4대보험 납부와 인건비 절세 전략을 종합 안내합니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/47/400/260', title:'임차료와 리스료 세무처리 차이점', excerpt:'운용리스 vs 금융리스 회계 처리. 어떤 방식이 절세에 유리한지 사례별로 비교 분석합니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/48/400/260', title:'전산세무 회계 프로그램 활용 팁', excerpt:'더존·ERP 사용자가 놓치는 기능. 세무 프로그램을 100% 활용하는 고급 기능을 소개합니다.'},
+        {cat:'장부/회계', img:'https://picsum.photos/seed/49/400/260', title:'세금 신고 전 재무제표 최종 점검 체크리스트', excerpt:'실수 없는 신고 준비. 신고 전 반드시 확인해야 할 재무제표 항목 체크리스트를 제공합니다.'},
+
+        // 법인세
+        {cat:'법인세', img:'https://picsum.photos/seed/50/400/260', title:'개인사업자 vs 법인 언제 전환해야 할까?', excerpt:'매출 기준과 절세 효과 분석. 법인 전환이 유리해지는 매출 기준과 전환 절차를 안내합니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/51/400/260', title:'법인세율 구조와 절세 포인트', excerpt:'과세표준별 세율 완벽 이해. 법인세를 합법적으로 줄이기 위한 핵심 절세 전략을 알려드립니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/52/400/260', title:'법인 설립 시 꼭 알아야 할 세금', excerpt:'자본금, 등록세, 창업 초기 절세 방법. 법인을 설립할 때 발생하는 세금과 절세 전략을 안내합니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/53/400/260', title:'법인세 중간예납 완벽 이해', excerpt:'납부 시기와 절세 전략. 8월 법인세 중간예납을 현명하게 처리하는 방법을 설명합니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/54/400/260', title:'대표이사 급여 최적화 전략', excerpt:'법인세와 소득세 동시에 줄이는 방법. 대표이사 급여 설정으로 세금 부담을 최소화하세요.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/55/400/260', title:'법인 접대비 한도와 처리 방법', excerpt:'2025년 기준 한도액과 증빙 방법. 법인 접대비를 최대한 활용하면서도 리스크를 줄이는 전략입니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/56/400/260', title:'법인 업무용 차량 세금 처리 완벽 정리', excerpt:'운행일지 작성과 경비 한도. 법인 명의 차량의 세금 혜택을 최대화하는 방법을 설명합니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/57/400/260', title:'법인의 가지급금 문제와 해결책', excerpt:'세무조사에서 가장 많이 지적되는 항목. 가지급금 발생 원인과 단계별 해결 방법을 안내합니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/58/400/260', title:'법인 배당과 급여 조합 절세 전략', excerpt:'대표이사라면 꼭 알아야 할 세금 설계. 배당과 급여의 최적 조합으로 세금을 최소화하세요.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/59/400/260', title:'소규모 법인 세무관리 핵심 포인트', excerpt:'소기업·소상공인 특별 혜택 총정리. 중소법인이 놓치기 쉬운 세액공제와 감면 항목을 안내합니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/60/400/260', title:'법인 결손금 이월공제 활용법', excerpt:'최대 15년 절세 효과 이렇게 활용하세요. 적자 법인의 결손금을 미래 이익에 공제하는 전략입니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/61/400/260', title:'연구인력개발비 세액공제 완벽 가이드', excerpt:'스타트업·중소기업 필수 절세 방법. R&D 비용의 세액공제 대상과 신청 방법을 정리했습니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/62/400/260', title:'중소기업 특별세액감면 대상과 방법', excerpt:'업종별 감면율과 신청 방법. 중소기업이라면 반드시 챙겨야 할 법인세 감면 혜택을 안내합니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/63/400/260', title:'법인 청산 시 세금 처리 방법', excerpt:'폐업과 청산 절차 완벽 가이드. 법인을 청산할 때 발생하는 세금과 최적의 처리 방법을 설명합니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/64/400/260', title:'법인 합병·분할 세금 이슈', excerpt:'M&A 시 알아야 할 세금 처리 방법. 합병·분할 방식에 따른 세금 차이와 절세 전략을 비교합니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/65/400/260', title:'세무조사 대비 법인세 리스크 관리', excerpt:'자주 지적되는 항목과 대비책. 법인세 세무조사에서 반드시 준비해야 할 서류와 대응 전략입니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/66/400/260', title:'지주회사 전환 세금 이슈 완벽 정리', excerpt:'인적분할·물적분할 세금 비교. 지주회사 체제로 전환 시 고려해야 할 세금 이슈를 정리했습니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/67/400/260', title:'법인의 부동산 취득과 세금 전략', excerpt:'법인명의 부동산, 세금은 얼마? 법인으로 부동산을 취득할 때 유리한 점과 주의사항을 안내합니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/68/400/260', title:'법인세 신고 오류 TOP 10과 해결법', excerpt:'가장 많이 발생하는 실수 정리. 법인세 신고 시 자주 발생하는 오류와 수정신고 방법을 안내합니다.'},
+        {cat:'법인세', img:'https://picsum.photos/seed/69/400/260', title:'법인 성실신고 확인 대상자 기준과 준비사항', excerpt:'대비 체크리스트. 성실신고 확인 대상 법인의 기준과 세액공제 혜택을 정리했습니다.'},
+
+        // 키즈경제교육
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/70/400/260', title:'아이와 함께하는 용돈 교육 어떻게 시작할까요?', excerpt:'연령별 실전 용돈 교육 방법. 아이의 경제 감각을 키우는 단계별 용돈 교육 가이드입니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/71/400/260', title:'어린이 통장 만들기 올바른 금융 습관의 시작', excerpt:'아이 명의 통장 개설부터 저축 습관까지. 어릴 때부터 시작하는 금융 교육의 첫 걸음입니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/72/400/260', title:'초등학생에게 가르치는 세금의 개념', excerpt:'아이가 이해하는 세금 이야기. 도로, 학교, 병원이 세금으로 만들어진다는 것을 쉽게 설명합니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/73/400/260', title:'용돈 기입장 단순하게 시작하는 법', excerpt:'아이가 스스로 관리하는 첫 재무제표. 용돈 기입장 작성법과 습관 만들기 방법을 소개합니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/74/400/260', title:'아이에게 저축의 가치를 알려주는 방법', excerpt:'복리의 마법을 쉽게 설명하기. 72의 법칙을 활용해 아이가 저축의 중요성을 깨닫게 하는 방법입니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/75/400/260', title:'중학생을 위한 주식 투자 기초 교육', excerpt:'부모와 함께하는 모의 투자 체험. 청소년이 주식 시장의 원리를 이해하는 쉬운 교육 방법입니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/76/400/260', title:'세무사가 알려주는 경제 독립 교육', excerpt:'아이가 성인이 되기 전 꼭 배워야 할 돈 지식. 세무사가 직접 설계한 경제 독립 교육 커리큘럼입니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/77/400/260', title:'가족 경제회의로 아이의 경제 감각 키우기', excerpt:'우리 가족 예산 함께 짜기. 가족이 함께하는 경제 교육으로 아이의 금융 감각을 키우는 방법입니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/78/400/260', title:'용돈으로 배우는 예산 세우기', excerpt:'쓰기 전에 계획하는 습관 만들기. 한 달 예산을 세우고 실천하는 아이를 만드는 교육 방법입니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/79/400/260', title:'아이에게 세금이 왜 필요한지 설명하는 법', excerpt:'학교와 도로는 어떻게 만들어질까? 생활 속 사례로 세금의 필요성을 아이에게 쉽게 가르치는 방법입니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/80/400/260', title:'고등학생을 위한 청년 금융 지원 제도', excerpt:'청년 통장·장학금·대출 완벽 정리. 취업·창업 전 반드시 알아야 할 청년 금융 지원 혜택입니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/81/400/260', title:'어린이 펀드와 세금 이슈', excerpt:'자녀 명의 투자 시 부모가 알아야 할 것들. 증여세 신고와 어린이 펀드의 절세 방법을 안내합니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/82/400/260', title:'자녀 증여 절세하면서 경제 교육까지', excerpt:'2천만원 공제 한도 활용법. 자녀에게 합법적으로 자산을 물려주며 경제 교육도 하는 방법입니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/83/400/260', title:'아이와 함께하는 시장 체험 경제 교육', excerpt:'실생활 속 경제 감각 키우기. 전통시장부터 마트까지, 쇼핑을 경제 교육의 기회로 활용하세요.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/84/400/260', title:'모의주식 투자로 배우는 금융 교육', excerpt:'초등학생도 할 수 있는 주식 공부. 가상의 돈으로 주식을 사고팔며 투자의 원리를 배우는 방법입니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/85/400/260', title:'경제 동화책 추천 세무사가 고른 베스트 도서', excerpt:'어린이 금융 교육 필독서 목록. 연령별로 읽히면 좋은 경제 교육 도서를 세무사가 직접 추천합니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/86/400/260', title:'청소년 창업 도전 세금은 어떻게 될까?', excerpt:'중·고등학생 창업 세금 완벽 정리. 미성년자 창업 시 발생하는 세금과 부모의 의무를 안내합니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/87/400/260', title:'금융 교육이 아이의 미래를 바꾸는 이유', excerpt:'경제 교육 효과 연구 분석. 어릴 때 받은 금융 교육이 성인 후 재정 건강에 미치는 영향을 알아봅니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/88/400/260', title:'부모가 먼저 배워야 할 금융 교육 원칙', excerpt:'가정에서 시작하는 경제 독립 훈련. 자녀에게 돈 이야기를 자연스럽게 하는 부모의 역할을 안내합니다.'},
+        {cat:'키즈경제교육', img:'https://picsum.photos/seed/89/400/260', title:'세무사가 직접 설계한 어린이 경제 교육 커리큘럼', excerpt:'나이별 금융 교육 가이드. 유아부터 고등학생까지 단계별 경제 교육 커리큘럼을 소개합니다.'},
+
+        // 부가가치세
+        {cat:'부가가치세', img:'https://picsum.photos/seed/90/400/260', title:'프리랜서를 위한 부가가치세 완전 정복', excerpt:'일반과세자 vs 간이과세자 선택 방법. 프리랜서가 반드시 알아야 할 부가세 신고 방법을 안내합니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/91/400/260', title:'일반과세자 vs 간이과세자 무엇이 유리할까?', excerpt:'매출 기준과 세금 차이 비교. 8천만 원 기준의 과세 유형 선택 전략을 상세히 설명합니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/92/400/260', title:'부가가치세 환급 받는 방법 완벽 가이드', excerpt:'환급 조건부터 신청까지. 사업 초기 투자가 많은 사업자가 부가세 환급을 받는 완벽한 방법입니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/93/400/260', title:'세금계산서 발행 의무와 불이익', excerpt:'미발행 시 가산세와 과태료 총정리. 세금계산서 발행 기한과 불이익을 반드시 확인하세요.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/94/400/260', title:'간이과세자 부가세 신고 방법 총정리', excerpt:'2025년 기준 신고 가이드. 간이과세자의 업종별 부가율과 신고 방법을 상세히 안내합니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/95/400/260', title:'부동산 관련 부가가치세 완벽 이해', excerpt:'임대업자·분양사업자 세금 정리. 상가 임대와 부동산 매매 시 발생하는 부가세를 완벽 정리했습니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/96/400/260', title:'수출 영세율 적용과 환급 방법', excerpt:'수출 사업자가 알아야 할 부가세 혜택. 영세율 적용 대상과 조기 환급 신청 방법을 안내합니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/97/400/260', title:'의제매입세액공제 활용법', excerpt:'음식점·제조업자의 절세 비결. 면세 농산물 구입 시 매입세액을 공제받는 방법을 설명합니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/98/400/260', title:'카드매출 세액공제 완벽 정리', excerpt:'음식점·소매업 사업자 절세 포인트. 신용카드 매출에 대한 세액공제를 최대한 활용하세요.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/99/400/260', title:'음식점 사업자의 부가세 절세 전략', excerpt:'원산지 표시부터 매입세액까지. 음식점 사업자가 알아야 할 부가가치세 절세 전략 총정리입니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/100/400/260', title:'건설업 부가가치세 핵심 이슈', excerpt:'도급공사 세금계산서 발행 방법. 건설업 특유의 부가세 이슈와 세금계산서 처리 방법을 안내합니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/101/400/260', title:'인터넷 쇼핑몰 부가세 신고 주의사항', excerpt:'오픈마켓 판매자 세금 완벽 정리. 스마트스토어·쿠팡 셀러가 알아야 할 부가세 신고 방법입니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/102/400/260', title:'부가세 가산세 종류와 피하는 방법', excerpt:'가장 많이 발생하는 실수 TOP 5. 부가세 신고·납부 지연 시 발생하는 가산세를 피하는 방법입니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/103/400/260', title:'면세사업자의 부가가치세 이해', excerpt:'면세 vs 과세 업종 완벽 구분. 면세 사업자가 과세 사업을 겸업할 때 알아야 할 세금 처리입니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/104/400/260', title:'부가가치세 매입세액 불공제 항목 정리', excerpt:'경비 처리 가능한 항목 구분. 매입세액 공제를 받을 수 없는 항목과 그 이유를 총정리했습니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/105/400/260', title:'업종별 부가가치세 신고 시 주의사항', excerpt:'업종마다 다른 세금 처리 완벽 정리. 서비스업·제조업·유통업별 부가세 신고 주의사항을 안내합니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/106/400/260', title:'사업 폐업 시 부가가치세 처리 방법', excerpt:'잔존 재화와 정산 방법. 폐업 시 재고 및 자산의 부가세 처리와 최종 신고 방법을 설명합니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/107/400/260', title:'부가세 조기환급 신청 조건과 방법', excerpt:'사업 초기 자금 부담 줄이기. 일반 환급보다 빠른 조기환급 신청 조건과 주의사항을 안내합니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/108/400/260', title:'창업 초기 부가가치세 절세 전략', excerpt:'사업자 등록부터 첫 신고까지. 창업 초기에 부가세 부담을 최소화하는 전략을 단계별로 안내합니다.'},
+        {cat:'부가가치세', img:'https://picsum.photos/seed/109/400/260', title:'부가가치세 신고서 작성 실전 가이드', excerpt:'단계별 작성 방법과 주의사항. 부가세 신고서를 처음 작성하는 사업자를 위한 실전 가이드입니다.'}
+    ];
+
+    let colCat = '전체';
+
+    function filterCol(el, cat) {
+        document.querySelectorAll('.col-tab').forEach(t => t.classList.remove('active'));
+        el.classList.add('active');
+        colCat = cat;
+        renderCol();
+    }
+
+    function renderCol() {
+        const grid = document.getElementById('colGrid');
+        if (!grid) return;
+        const list = colCat === '전체' ? POSTS : POSTS.filter(p => p.cat === colCat);
+        grid.innerHTML = list.map(p => `
+            <div class="col-card">
+                <img class="col-card-img" src="${p.img}" alt="${p.title}" loading="lazy">
+                <div class="col-card-body">
+                    <div class="col-card-tags"><span class="col-card-tag">${p.cat}</span></div>
+                    <p class="col-card-title">${p.title}</p>
+                    <p class="col-card-excerpt">${p.excerpt}</p>
+                </div>
+            </div>`).join('');
+    }
+
     function go(page) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         document.getElementById('pg-' + page).classList.add('active');
@@ -2026,6 +1953,8 @@
     document.getElementById('modal').addEventListener('click', function(e) {
         if (e.target === this) closeModal();
     });
+
+    renderCol();
 </script>
 </body>
 </html>
