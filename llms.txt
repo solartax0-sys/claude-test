@@ -19,6 +19,7 @@
 
 ### 상속
 
+- [상속세 일괄공제 5억 원, 자녀가 많으면 더 받을 수 있을까](https://solartax.kr/columns/inheritance-lump-sum-deduction.html): 상속세 일괄공제 5억 원과 기초공제·인적공제 합계 중 무엇을 받는지, 배우자 단독상속과 무신고 때 달라지는 점을 정리했어요.
 - [상속세 신고기한 6개월, 무엇부터 순서대로 할까](https://solartax.kr/columns/inheritance-tax-deadline-6months.html): 부모님이 돌아가신 뒤 상속세 신고기한 6개월 안에 해야 할 일을 순서대로 정리했어요. 재산 조회부터 신고·납부까지.
 - [배우자 상속공제, 최대 30억 원을 받으려면](https://solartax.kr/columns/spouse-inheritance-deduction.html): 배우자 상속공제는 최소 5억 원, 최대 30억 원까지예요. 실제로 많이 받으려면 분할 기한과 법정상속분을 알아야 해요.
 - [부모님과 10년 함께 산 집, 동거주택 상속공제 6억 원](https://solartax.kr/columns/cohabiting-house-deduction.html): 부모님을 모시고 10년 이상 한집에 산 자녀가 그 집을 상속받으면 최대 6억 원을 공제받을 수 있어요. 요건을 정리했어요.
@@ -65,6 +66,7 @@
 
 ### 기장·법인·부가세·종합소득세
 
+- [11월 종합소득세 중간예납 고지서, 꼭 그대로 내야 할까](https://solartax.kr/columns/income-tax-interim-prepayment.html): 종합소득세 중간예납은 작년 세금의 절반을 11월 30일까지 내는 제도예요. 대상, 추계액 신고, 50만 원 기준, 분납 방법을 정리했어요.
 - [3월 법인세 신고, 대표님이 미리 챙길 것](https://solartax.kr/columns/corporate-tax-filing-march.html): 12월 결산 법인은 3월 말까지 법인세를 신고해요. 결산 전에 대표님이 확인해야 할 항목을 정리했어요.
 - [부가세 매입세액, 공제 안 되는 대표적인 다섯 가지](https://solartax.kr/columns/vat-input-tax-not-deductible.html): 세금계산서를 받아도 부가세를 돌려받지 못하는 매입이 있어요. 승용차, 접대비 등 공제 안 되는 항목을 정리했어요.
 - [세금계산서 발급, 다음 달 10일을 넘기면](https://solartax.kr/columns/tax-invoice-deadline-penalty.html): 세금계산서는 거래한 날 또는 월합계로 다음 달 10일까지 발급해야 해요. 늦거나 안 하면 생기는 가산세를 정리했어요.
