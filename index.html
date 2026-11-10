@@ -486,6 +486,28 @@ footer .wrap{display:flex;flex-direction:column;gap:28px;padding-top:48px;paddin
   .hero-links .f-sns span{width:52px;height:52px;font-size:17px}
   .hero-links .f-sns span svg{transform:scale(1.3)}
 }
+
+/* PC 첫 화면: 예약 버튼 한 줄, 그 아래 색 동그라미 + 이름 4칸 */
+.hero-links .f-sns em{display:none}
+@media (min-width:761px){
+  .hero-links{grid-template-columns:1fr;gap:10px}
+  .hero-links .f-sns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+  .hero-links .f-sns a{display:flex;align-items:center;justify-content:center;gap:10px;height:52px;background:#fff;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--g)}
+  .hero-links .f-sns a:hover{border-color:var(--g);color:var(--g)}
+  .hero-links .f-sns span{width:30px;height:30px;font-size:14px}
+  .hero-links .f-sns span svg{transform:none}
+  .hero-links .f-sns em{display:inline;font-style:normal;font-weight:700;font-size:var(--fs-5)}
+  .hero-links .f-book{height:52px}
+}
+
+@media (min-width:761px){
+  .hero-l{gap:20px}
+  .hero-links{gap:8px}
+  .hero-links .f-book,.hero-links .f-sns a{height:48px}
+  .hero-links .f-sns{gap:8px}
+  .person{padding:16px 20px 16px 16px}
+  .person .ph{width:96px;height:96px}
+}
 </style>
 </head>
 <body>
@@ -533,10 +555,10 @@ footer .wrap{display:flex;flex-direction:column;gap:28px;padding-top:48px;paddin
       <div class="hero-links">
         <a class="f-book" href="https://naver.me/GbyrA1YC" target="_blank" rel="noopener">네이버 예약으로 상담 잡기</a>
         <div class="f-sns">
-          <a href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener" aria-label="네이버 블로그" title="네이버 블로그"><span style="background:#03C75A">N</span></a>
-          <a href="https://www.youtube.com/@solar_tax" target="_blank" rel="noopener" aria-label="유튜브" title="유튜브"><span style="background:#FF0000"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"></path></svg></span></a>
-          <a href="https://www.instagram.com/solartax/" target="_blank" rel="noopener" aria-label="인스타그램" title="인스타그램"><span style="background:#D6249F"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"></circle></svg></span></a>
-          <a href="http://pf.kakao.com/_DPjcb/chat" target="_blank" rel="noopener" aria-label="카카오톡 채널 상담" title="카카오톡 채널 상담"><span style="background:#FEE500"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 6l-1 3.6 4.1-2.7c.6.1 1.1.1 1.7.1 5 0 9-3.1 9-7s-4-7-9-7z" fill="#3A1D1D"></path></svg></span></a>
+          <a href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener" aria-label="네이버 블로그" title="네이버 블로그"><span style="background:#03C75A">N</span><em>블로그</em></a>
+          <a href="https://www.youtube.com/@solar_tax" target="_blank" rel="noopener" aria-label="유튜브" title="유튜브"><span style="background:#FF0000"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"></path></svg></span><em>유튜브</em></a>
+          <a href="https://www.instagram.com/solartax/" target="_blank" rel="noopener" aria-label="인스타그램" title="인스타그램"><span style="background:#D6249F"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"></circle></svg></span><em>인스타그램</em></a>
+          <a href="http://pf.kakao.com/_DPjcb/chat" target="_blank" rel="noopener" aria-label="카카오톡 채널 상담" title="카카오톡 채널 상담"><span style="background:#FEE500"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 6l-1 3.6 4.1-2.7c.6.1 1.1.1 1.7.1 5 0 9-3.1 9-7s-4-7-9-7z" fill="#3A1D1D"></path></svg></span><em>카톡 상담</em></a>
         </div>
       </div>
     </div>
