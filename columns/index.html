@@ -182,7 +182,7 @@ function draw(keep){var k=q.value.replace(/\s/g,'').toLowerCase();if(!keep)page=
  pager.innerHTML='';if(pages<2)return;
  function btn(label,n,dis,on){var b=document.createElement('button');b.type='button';b.innerHTML=label;b.disabled=!!dis;if(on){b.className='on';b.setAttribute('aria-current','page')}
   b.onclick=function(){page=n;draw(true);var t=document.getElementById('q').getBoundingClientRect().top+scrollY-140;scrollTo({top:t,behavior:'smooth'})};pager.appendChild(b)}
- btn('‹ 이전',page-1,page===1);for(var n=1;n<=pages;n++)btn(n,n,false,n===page);btn('다음 ›',page+1,page===pages)}
+ var G=5,gs=Math.floor((page-1)/G)*G+1,ge=Math.min(gs+G-1,pages);btn('‹ 이전',gs-1,gs===1);for(var n=gs;n<=ge;n++)btn(n,n,false,n===page);btn('다음 ›',ge+1,ge===pages)}
 var h=decodeURIComponent(location.hash.slice(1));T.forEach(function(t,i){if(t[0]===h)cur=i});
 q.addEventListener('input',function(){draw()});draw();
 })();
