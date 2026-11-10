@@ -493,6 +493,12 @@ footer .wrap{padding-top:56px;padding-bottom:140px;display:flex;flex-wrap:wrap;g
 <div class="toast" id="toast" role="status">신청됐어요. 세무사가 직접 연락드릴게요.</div>
 
 <script>
+(function(){try{if(sessionStorage.getItem('st_src'))return;var r=document.referrer,h='';try{h=r?new URL(r).hostname:''}catch(e){}
+if(h&&h.indexOf('solartax.kr')>-1)return;var q=new URLSearchParams(location.search),u=q.get('utm_source'),n='직접 방문';
+if(u)n=u;else if(/blog\.naver|m\.blog\.naver/.test(h))n='네이버 블로그';else if(/naver/.test(h))n='네이버 검색';else if(/google/.test(h))n='구글 검색';else if(/daum|kakao/.test(h))n='다음·카카오';else if(/instagram/.test(h))n='인스타그램';else if(/youtube/.test(h))n='유튜브';else if(h)n=h;
+sessionStorage.setItem('st_src',n);sessionStorage.setItem('st_land',location.pathname)}catch(e){}})();
+</script>
+<script>
 (function(){
   function group(id){
     var box=document.getElementById(id);
@@ -519,7 +525,7 @@ async function send(e,src){
     var res=await fetch('https://formsubmit.co/ajax/solartax@solartax.kr',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({'이름':name,'연락처':tel,'상담 분야':type,'재산 규모':size,'신청 위치':src==='diag'?'1차 진단 카드':'하단 신청 바','_subject':'[솔라택스] 상담 신청 - '+name+' ('+type+')','_captcha':'false'})
+      body:JSON.stringify({'이름':name,'연락처':tel,'상담 분야':type,'재산 규모':size,'신청 위치':src==='diag'?'1차 진단 카드':'하단 신청 바','유입 경로':(function(){try{return sessionStorage.getItem('st_src')||'알 수 없음'}catch(e){return '알 수 없음'}})(),'처음 본 페이지':(function(){try{return sessionStorage.getItem('st_land')||'/'}catch(e){return '/'}})(),'_subject':'[솔라택스] 상담 신청 - '+name+' ('+type+')','_captcha':'false'})
     });
     if(res.ok){
       f.reset();
