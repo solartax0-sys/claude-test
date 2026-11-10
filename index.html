@@ -425,6 +425,22 @@ nav,.opt,.btn,.map-l dl,.fields input,.diag .btn,.mbar a{font-size:var(--fs-4)}
 .person .ph{width:88px;height:88px;border-radius:50%;overflow:hidden;flex:none;background:var(--cream);display:block}
 .person .ph img{width:100%;height:100%;border-radius:0;object-fit:cover;object-position:50% 14%;transform:scale(1.9);transform-origin:50% 22%}
 @media (max-width:760px){.person .ph{width:72px;height:72px}}
+
+/* PC: SNS를 사진 아래로 / 휴대폰: 소개 끝 */
+.about-l{flex:1 1 320px;max-width:420px;display:flex;flex-direction:column;gap:16px}
+.about-l img{width:100%;max-width:none;flex:none}
+.about-l .sns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0;max-width:none}
+.about-l .sns a{justify-content:center;gap:6px;padding:11px 4px;font-size:var(--fs-5);white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:999px;color:var(--g);text-decoration:none;display:flex;align-items:center}
+.about-l .sns span{width:24px;height:24px;font-size:12px;flex:none}
+@media (max-width:760px){
+  .about-l{display:contents}
+  .about-l img{order:1}
+  .about-r{order:2}
+  .about-l .sns{order:3;width:100%;margin-top:-8px}
+  .about-l .sns a{padding:12px 2px;font-size:13px;gap:5px}
+  .about-l .sns span{width:22px;height:22px}
+}
+@media (min-width:761px){.about .wrap{align-items:flex-start}.about-l{position:sticky;top:110px}}
 </style>
 </head>
 <body>
@@ -559,7 +575,15 @@ nav,.opt,.btn,.map-l dl,.fields input,.diag .btn,.mbar a{font-size:var(--fs-4)}
 
 <section class="sec about" id="about">
   <div class="wrap">
-    <img src="/profile.jpg" alt="안산 세무사 설나현" width="560" height="784" loading="lazy">
+    <div class="about-l">
+      <img src="/profile.jpg" alt="안산 세무사 설나현" width="560" height="784" loading="lazy">
+      <div class="sns">
+        <a href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener"><span style="background:#03C75A">N</span>블로그</a>
+        <a href="https://www.youtube.com/@solar_tax" target="_blank" rel="noopener"><span style="background:#FF0000"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"></path></svg></span>유튜브</a>
+        <a href="https://www.instagram.com/solartax/" target="_blank" rel="noopener"><span style="background:#D6249F"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"></circle></svg></span>인스타</a>
+        <a href="http://pf.kakao.com/_DPjcb/chat" target="_blank" rel="noopener"><span style="background:#FEE500"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 6l-1 3.6 4.1-2.7c.6.1 1.1.1 1.7.1 5 0 9-3.1 9-7s-4-7-9-7z" fill="#3A1D1D"></path></svg></span>카톡</a>
+      </div>
+    </div>
     <div class="about-r">
       <div class="y-big"><strong>11</strong><span>년차 세무사</span></div>
       <h2>안산에서 나고 자란 세무사,<br>이웃의 세금을 내 일처럼 봅니다</h2>
@@ -584,12 +608,6 @@ nav,.opt,.btn,.map-l dl,.fields input,.diag .btn,.mbar a{font-size:var(--fs-4)}
         <li class="more">한양대학교 졸업 · 안산동산고</li>
       </ul>
       <button type="button" class="about-more" onclick="this.closest('.about-r').classList.add('open')">소개 더 보기</button>
-      <div class="sns">
-        <a href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener"><span style="background:#03C75A">N</span>블로그</a>
-        <a href="https://www.youtube.com/@solar_tax" target="_blank" rel="noopener"><span style="background:#FF0000"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"></path></svg></span>유튜브</a>
-        <a href="https://www.instagram.com/solartax/" target="_blank" rel="noopener"><span style="background:#D6249F"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"></circle></svg></span>인스타</a>
-        <a href="http://pf.kakao.com/_DPjcb/chat" target="_blank" rel="noopener"><span style="background:#FEE500"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 6l-1 3.6 4.1-2.7c.6.1 1.1.1 1.7.1 5 0 9-3.1 9-7s-4-7-9-7z" fill="#3A1D1D"></path></svg></span>카톡</a>
-      </div>
     </div>
   </div>
 </section>
