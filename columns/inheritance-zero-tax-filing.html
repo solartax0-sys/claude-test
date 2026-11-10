@@ -74,6 +74,26 @@ article p{font-size:17px;margin:0 0 14px;color:#3d3d3d}
 .top .in{box-sizing:border-box}
 .top .call{line-height:1.7}
 @media (max-width:760px){.gnav{font-size:14px!important}.gnav .pc-nav{display:none}.gnav{overflow:visible}}
+
+/* ===== 푸터·폭: 메인과 동일 ===== */
+footer{background:#404040;color:#E2E3E8;font-size:14px;margin-top:0}
+footer .wrap{max-width:1200px!important;margin:0 auto!important;padding:48px 24px!important;display:flex!important;flex-direction:column;gap:28px;box-sizing:border-box}
+footer .wrap>*{max-width:none!important}
+.f-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.f-top>img{height:40px;width:auto}
+.f-act{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.f-book{color:#fff;text-decoration:none;font-weight:700;font-size:14px;border:1.5px solid rgba(255,255,255,.45);border-radius:999px;padding:10px 18px}
+.f-book:hover{color:#fff;border-color:#fff}
+.f-sns{display:flex;gap:10px}.f-sns a{display:flex}
+.f-sns span{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px}
+.f-info{display:flex;flex-direction:column;gap:4px;font-size:13px;color:#E2E3E8;line-height:1.7}
+.f-info a{color:#E2E3E8}
+.f-info .copy{margin-top:8px;color:#C9CAD0}
+@media (max-width:760px){footer .wrap{gap:22px;padding:36px 24px!important}.f-top>img{height:32px}.f-act{display:contents}.f-sns{gap:8px}.f-sns span{width:32px;height:32px;font-size:13px}.f-book{order:3;width:100%;text-align:center;padding:12px}body{padding-bottom:0}footer .wrap{padding-bottom:96px!important}}
+
+/* 칼럼: 시작선을 메인과 같게(1200 기준 왼쪽), 읽기 폭 860 */
+main.wrap{max-width:1200px!important;box-sizing:border-box;padding-left:24px!important;padding-right:24px!important}
+main.wrap>*{max-width:860px}
 </style>
 </head>
 <body>
@@ -99,8 +119,29 @@ article p{font-size:17px;margin:0 0 14px;color:#3d3d3d}
 </article>
 <div class="cta"><div><strong>내 상황에도 해당될까요?</strong><p>세무사가 직접 전화로 1차 진단을 해 드려요. 사무실은 안산 법원 앞(고잔동 삼영빌딩 608호)이에요.</p></div><a href="/#diagnose">무료 1차 진단 신청</a></div>
 <div class="more"><h3>함께 보면 좋은 칼럼</h3><div class="list"><a href="/columns/nominee-stock-inheritance.html"><span>상속·비상장주식</span><strong>명의만 빌려준 주식, 상속 때 세금 폭탄이 되는 이유</strong></a><a href="/columns/family-corporation.html"><span>가족법인</span><strong>가족법인으로 자녀에게 재산 넘기기, 득과 실</strong></a><a href="/columns/burden-gift.html"><span>증여·양도</span><strong>부담부증여, 언제 유리하고 언제 손해일까</strong></a></div></div>
-<p class="foot">솔라세무회계컨설팅 · 대표 세무사 설나현 · 경기도 안산시 단원구 광덕서로 68, 608호 (고잔동, 삼영빌딩)<br>031-522-5757 · <a href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener">네이버 블로그</a> · <a href="/privacy.html">개인정보처리방침</a><br>이 글은 일반적인 정보이며, 개별 사안은 상담을 통해 확인하시기 바랍니다.</p>
 </main>
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <img src="/logo-white.png" alt="솔라세무회계" width="320" height="93">
+      <div class="f-act">
+        <a class="f-book" href="https://naver.me/GbyrA1YC" target="_blank" rel="noopener">네이버로 방문 상담 예약</a>
+        <div class="f-sns">
+        <a href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener" aria-label="네이버 블로그" title="네이버 블로그"><span style="background:#03C75A">N</span></a>
+        <a href="https://www.youtube.com/@solar_tax" target="_blank" rel="noopener" aria-label="유튜브" title="유튜브"><span style="background:#FF0000"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"></path></svg></span></a>
+        <a href="https://www.instagram.com/solartax/" target="_blank" rel="noopener" aria-label="인스타그램" title="인스타그램"><span style="background:#D6249F"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"></circle></svg></span></a>
+        <a href="http://pf.kakao.com/_DPjcb/chat" target="_blank" rel="noopener" aria-label="카카오톡 채널 상담" title="카카오톡 채널 상담"><span style="background:#FEE500"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 6l-1 3.6 4.1-2.7c.6.1 1.1.1 1.7.1 5 0 9-3.1 9-7s-4-7-9-7z" fill="#3A1D1D"></path></svg></span></a>
+        </div>
+      </div>
+    </div>
+    <div class="f-info">
+      <span>솔라세무회계컨설팅 · 대표 세무사 설나현 · 사업자등록번호 <span style="white-space:nowrap">847-18-01719</span></span>
+      <span>경기도 안산시 단원구 광덕서로 68, 608호 (고잔동, 삼영빌딩)</span>
+      <span>전화 031-522-5757 · 팩스 031-522-5758 · solartax@solartax.kr</span>
+      <span class="copy">© 2026 솔라세무회계컨설팅 · <a href="/privacy.html" style="color:#E2E3E8">개인정보처리방침</a></span>
+    </div>
+  </div>
+</footer>
 <script>
 (function(){try{if(sessionStorage.getItem('st_src'))return;var r=document.referrer,h='';try{h=r?new URL(r).hostname:''}catch(e){}
 if(h&&h.indexOf('solartax.kr')>-1)return;var q=new URLSearchParams(location.search),u=q.get('utm_source'),n='직접 방문';

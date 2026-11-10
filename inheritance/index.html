@@ -143,6 +143,22 @@ h1 em{color:#404040;background:linear-gradient(transparent 60%,#FEF3D0 60%)}
 .top .in{box-sizing:border-box}
 .top .call{line-height:1.7}
 @media (max-width:760px){.gnav{font-size:14px!important}.gnav .pc-nav{display:none}.gnav{overflow:visible}}
+
+/* ===== 푸터·폭: 메인과 동일 ===== */
+footer{background:#404040;color:#E2E3E8;font-size:14px;margin-top:0}
+footer .wrap{max-width:1200px!important;margin:0 auto!important;padding:48px 24px!important;display:flex!important;flex-direction:column;gap:28px;box-sizing:border-box}
+footer .wrap>*{max-width:none!important}
+.f-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.f-top>img{height:40px;width:auto}
+.f-act{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.f-book{color:#fff;text-decoration:none;font-weight:700;font-size:14px;border:1.5px solid rgba(255,255,255,.45);border-radius:999px;padding:10px 18px}
+.f-book:hover{color:#fff;border-color:#fff}
+.f-sns{display:flex;gap:10px}.f-sns a{display:flex}
+.f-sns span{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px}
+.f-info{display:flex;flex-direction:column;gap:4px;font-size:13px;color:#E2E3E8;line-height:1.7}
+.f-info a{color:#E2E3E8}
+.f-info .copy{margin-top:8px;color:#C9CAD0}
+@media (max-width:760px){footer .wrap{gap:22px;padding:36px 24px!important}.f-top>img{height:32px}.f-act{display:contents}.f-sns{gap:8px}.f-sns span{width:32px;height:32px;font-size:13px}.f-book{order:3;width:100%;text-align:center;padding:12px}body{padding-bottom:0}footer .wrap{padding-bottom:96px!important}}
 </style>
 </head>
 <body>
@@ -197,7 +213,28 @@ h1 em{color:#404040;background:linear-gradient(transparent 60%,#FEF3D0 60%)}
   </div>
 </div></section>
 </main>
-<p class="foot">솔라세무회계컨설팅 · 대표 세무사 설나현 · 경기도 안산시 단원구 광덕서로 68, 608호 (고잔동, 삼영빌딩)<br>전화 031-522-5757 · <a href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener">네이버 블로그</a> · <a href="https://www.instagram.com/solartax/" target="_blank" rel="noopener">인스타그램</a> · <a href="/privacy.html">개인정보처리방침</a></p>
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <img src="/logo-white.png" alt="솔라세무회계" width="320" height="93">
+      <div class="f-act">
+        <a class="f-book" href="https://naver.me/GbyrA1YC" target="_blank" rel="noopener">네이버로 방문 상담 예약</a>
+        <div class="f-sns">
+        <a href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener" aria-label="네이버 블로그" title="네이버 블로그"><span style="background:#03C75A">N</span></a>
+        <a href="https://www.youtube.com/@solar_tax" target="_blank" rel="noopener" aria-label="유튜브" title="유튜브"><span style="background:#FF0000"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"></path></svg></span></a>
+        <a href="https://www.instagram.com/solartax/" target="_blank" rel="noopener" aria-label="인스타그램" title="인스타그램"><span style="background:#D6249F"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"></circle></svg></span></a>
+        <a href="http://pf.kakao.com/_DPjcb/chat" target="_blank" rel="noopener" aria-label="카카오톡 채널 상담" title="카카오톡 채널 상담"><span style="background:#FEE500"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 6l-1 3.6 4.1-2.7c.6.1 1.1.1 1.7.1 5 0 9-3.1 9-7s-4-7-9-7z" fill="#3A1D1D"></path></svg></span></a>
+        </div>
+      </div>
+    </div>
+    <div class="f-info">
+      <span>솔라세무회계컨설팅 · 대표 세무사 설나현 · 사업자등록번호 <span style="white-space:nowrap">847-18-01719</span></span>
+      <span>경기도 안산시 단원구 광덕서로 68, 608호 (고잔동, 삼영빌딩)</span>
+      <span>전화 031-522-5757 · 팩스 031-522-5758 · solartax@solartax.kr</span>
+      <span class="copy">© 2026 솔라세무회계컨설팅 · <a href="/privacy.html" style="color:#E2E3E8">개인정보처리방침</a></span>
+    </div>
+  </div>
+</footer>
 <div class="toast" id="toast" role="status">신청됐어요. 다음 영업일에 세무사가 직접 전화드릴게요.</div>
 <script>
 (function(){try{if(sessionStorage.getItem('st_src'))return;var r=document.referrer,h='';try{h=r?new URL(r).hostname:''}catch(e){}
@@ -224,7 +261,7 @@ wcs_do();
 <script>
 (function(){var b=document.querySelector('.mbar'),on=new Set();if(!b||!('IntersectionObserver' in window))return;
 function cb(es){es.forEach(function(e){e.isIntersecting?on.add(e.target):on.delete(e.target)});b.classList.toggle('off',on.size>0)}
-var a=document.getElementById('apply'),f=document.querySelector('.foot');
+var a=document.getElementById('apply'),f=document.querySelector('footer');
 if(a)new IntersectionObserver(cb,{rootMargin:'-30% 0px -30% 0px'}).observe(a);if(f)new IntersectionObserver(cb).observe(f);})();
 (function(){var s=new Date(2016,10,15),n=new Date(),y=n.getFullYear()-s.getFullYear();
 if(n.getMonth()<s.getMonth()||(n.getMonth()===s.getMonth()&&n.getDate()<s.getDate()))y--;
