@@ -920,5 +920,11 @@ if(ft)new IntersectionObserver(cb).observe(ft);})();
 if(n.getMonth()<s.getMonth()||(n.getMonth()===s.getMonth()&&n.getDate()<s.getDate()))y--;
 var v=Math.max(11,y+1);document.querySelectorAll('.yrs').forEach(function(e){e.textContent=v})})();
 </script>
+<script>
+/* 메뉴·다른 페이지에서 #위치로 올 때 애니메이션 없이 바로 이동 */
+(function(){function go(h,smooth){var t=h&&document.getElementById(h.slice(1));if(!t)return false;var y=t.getBoundingClientRect().top+scrollY-(innerWidth>760?130:10);window.scrollTo({top:y,behavior:'instant'});return true}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"],a[href^="/#"]');if(!a)return;var h=a.getAttribute('href').replace(/^\//,'');if(h.length<2||location.pathname!=='/'&&location.pathname!=='/index.html')return;if(go(h)){e.preventDefault();history.replaceState(null,'',h)}});
+if(location.hash){go(location.hash);addEventListener('load',function(){go(location.hash)})}})();
+</script>
 </body>
 </html>
