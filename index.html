@@ -532,6 +532,14 @@ footer .wrap{display:flex;flex-direction:column;gap:28px;padding-top:48px;paddin
   nav{gap:4px 22px;overflow:visible}
 }
 .person .ph img{transform:none;object-position:center}
+
+/* PC: 갈색 띠가 헤더와 함께 따라옴 */
+@media (min-width:761px){
+  .band{position:sticky;top:0;z-index:51;height:46px;padding-top:0;padding-bottom:0}
+  header{top:46px}
+  html{scroll-padding-top:150px}
+  .card{scroll-margin-top:150px}
+}
 </style>
 </head>
 <body>
