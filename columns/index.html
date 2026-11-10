@@ -99,6 +99,15 @@ main.wrap>*{max-width:860px}
   header nav,.top .gnav{flex-wrap:nowrap!important;justify-content:space-between!important;gap:4px 8px!important;overflow:visible!important}
   header nav a,.top .gnav a{white-space:nowrap}
 }
+.find{display:flex;flex-direction:column;gap:12px;margin-bottom:18px}
+.find input{width:100%;font:inherit;font-size:16px;padding:13px 16px 13px 44px;border:1px solid #E5D3AE;border-radius:12px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%238F5A00' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='9' cy='9' r='6'/%3E%3Cpath d='m14 14 4 4'/%3E%3C/svg%3E") no-repeat 15px center;color:#404040;box-sizing:border-box}
+.find input:focus{outline:none;border-color:#F29F05;box-shadow:0 0 0 3px #FEF3D0}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;font:inherit;font-size:14px;font-weight:700;padding:8px 15px;border-radius:999px;border:1px solid #E5D3AE;background:#fff;color:#404040;cursor:pointer}
+.tabs button.on{background:#404040;border-color:#404040;color:#fff}
+.tabs button em{font-style:normal;font-weight:500;opacity:.7;margin-left:3px}
+.noresult{display:none;background:#fff;border-radius:10px;padding:28px 18px;text-align:center;color:#6B7280;font-size:15px}
+.noresult a{color:#8F5A00;font-weight:700}
 </style>
 </head>
 <body>
@@ -108,6 +117,8 @@ main.wrap>*{max-width:860px}
 <div class="crumb"><a href="/">홈</a> › 칼럼</div>
 <h1>세무사가 직접 쓰는 칼럼</h1>
 <div class="meta">상속·증여·양도·가족법인·기장·기업진단 · 블로그에는 500편이 더 있어요 → <a href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener">네이버 블로그</a></div>
+<div class="find"><input id="q" type="search" placeholder="칼럼 검색 (예: 증여, 부가세, 통장)" aria-label="칼럼 검색"><div class="tabs" id="tabs" role="tablist"></div></div>
+<div class="noresult" id="none">찾는 내용이 아직 없어요. <a href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener">네이버 블로그</a>에서 더 찾아보시거나 <a href="/#diagnose">무료 1차 진단</a>으로 바로 물어보세요.</div>
 <div class="list"><!--COLLIST--><a href="/columns/inherited-house-capital-gains.html"><span>상속·양도</span><strong>안산 상속세 신고, 집값을 얼마로 적느냐가 나중 양도세를 정해요</strong></a><a href="/columns/inheritance-zero-tax-filing.html"><span>상속</span><strong>상속세가 0원이어도 신고해 두면 좋은 이유</strong></a><a href="/columns/nominee-stock-inheritance.html"><span>상속·비상장주식</span><strong>명의만 빌려준 주식, 상속 때 세금 폭탄이 되는 이유</strong></a><a href="/columns/family-corporation.html"><span>가족법인</span><strong>가족법인으로 자녀에게 재산 넘기기, 득과 실</strong></a><a href="/columns/burden-gift.html"><span>증여·양도</span><strong>부담부증여, 언제 유리하고 언제 손해일까</strong></a><a href="/columns/prior-gift-10years.html"><span>증여·상속</span><strong>10년 안 증여는 다시 합쳐진다, 사전증여 시기 정하기</strong></a><a href="/columns/inheritance-audit-bank.html"><span>상속·세무조사</span><strong>상속세 조사, 통장은 몇 년 치까지 볼까</strong></a><a href="/columns/corporate-bookkeeping-ceo-stock.html"><span>기장·법인</span><strong>안산 법인 기장, 장부만 맡기면 대표 주식은 아무도 안 봐요</strong></a><a href="/columns/january-vat-corporation.html"><span>기장·부가세</span><strong>1월 부가세 확정신고, 법인 대표님이 챙길 5가지</strong></a><a href="/columns/construction-business-diagnosis.html"><span>기업진단</span><strong>안산 기업진단, 건설업 신규·갱신 때 미리 준비할 것</strong></a><!--/COLLIST--></div>
 <div class="cta"><div><strong>글로 해결되지 않는 고민이 있나요?</strong><p>세무사가 직접 전화로 1차 진단을 해 드려요.</p></div><a href="/#diagnose">무료 1차 진단 신청</a></div>
 </main>
@@ -146,6 +157,22 @@ wcs_add["wa"] = "1d020dcbaf1ef70";
 if(window.wcs) {
 wcs_do();
 }
+</script>
+<script>
+(function(){
+var T=[['전체',/./],['상속',/상속/],['증여',/증여/],['양도',/양도/],['가족법인·주식',/가족법인|비상장|주식/],['기장·법인',/기장|부가세|기업진단/],['세무조사',/세무조사|조사/]];
+var items=[].slice.call(document.querySelectorAll('.list a')),q=document.getElementById('q'),tabs=document.getElementById('tabs'),none=document.getElementById('none'),cur=0;
+function cat(a){return a.querySelector('span').textContent}
+function txt(a){return a.textContent.replace(/\s/g,'').toLowerCase()}
+T.forEach(function(t,i){var n=items.filter(function(a){return t[1].test(cat(a))}).length;if(i&&!n)return;
+ var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.innerHTML=t[0]+'<em>'+n+'</em>';b.onclick=function(){cur=i;draw();try{history.replaceState(null,'',i?'#'+encodeURIComponent(t[0]):location.pathname)}catch(e){}};b.dataset.i=i;tabs.appendChild(b)});
+function draw(){var k=q.value.replace(/\s/g,'').toLowerCase(),shown=0;
+ items.forEach(function(a){var ok=T[cur][1].test(cat(a))&&(!k||txt(a).indexOf(k)>-1);a.style.display=ok?'':'none';if(ok)shown++});
+ none.style.display=shown?'none':'block';
+ [].forEach.call(tabs.children,function(b){var on=+b.dataset.i===cur;b.className=on?'on':'';b.setAttribute('aria-selected',on)})}
+var h=decodeURIComponent(location.hash.slice(1));T.forEach(function(t,i){if(t[0]===h)cur=i});
+q.addEventListener('input',draw);draw();
+})();
 </script>
 </body>
 </html>
