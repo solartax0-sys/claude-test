@@ -112,6 +112,7 @@ main.wrap>*{max-width:860px}
 .pager button:disabled{opacity:.35;cursor:default}
 .noresult{display:none;background:#fff;border-radius:10px;padding:28px 18px;text-align:center;color:#6B7280;font-size:15px}
 .noresult a{color:#8F5A00;font-weight:700}
+@media(max-width:760px){.pager{flex-wrap:nowrap;gap:5px}.pager button{min-width:0;flex:1 1 0;max-width:46px;height:44px;padding:0}.pager .pt{display:none}}
 </style>
 <style>/* 작은 글씨 키움 */.cols a>span,.list a>span,a.col>span,.case .t,.case .tag,.tag{font-size:14px!important}.rv small,.case-note{font-size:13px!important}</style>
 </head>
@@ -184,7 +185,7 @@ function draw(keep){var k=q.value.replace(/\s/g,'').toLowerCase();if(!keep)page=
  pager.innerHTML='';if(pages<2)return;
  function btn(label,n,dis,on){var b=document.createElement('button');b.type='button';b.innerHTML=label;b.disabled=!!dis;if(on){b.className='on';b.setAttribute('aria-current','page')}
   b.onclick=function(){page=n;draw(true);var t=document.getElementById('q').getBoundingClientRect().top+scrollY-140;scrollTo({top:t,behavior:'smooth'})};pager.appendChild(b)}
- var G=5,gs=Math.floor((page-1)/G)*G+1,ge=Math.min(gs+G-1,pages);btn('‹ 이전',gs-1,gs===1);for(var n=gs;n<=ge;n++)btn(n,n,false,n===page);btn('다음 ›',ge+1,ge===pages)}
+ var G=5,gs=Math.floor((page-1)/G)*G+1,ge=Math.min(gs+G-1,pages);btn('‹<span class="pt"> 이전</span>',gs-1,gs===1);for(var n=gs;n<=ge;n++)btn(n,n,false,n===page);btn('<span class="pt">다음 </span>›',ge+1,ge===pages)}
 var h=decodeURIComponent(location.hash.slice(1));T.forEach(function(t,i){if(t[0]===h)cur=i});
 q.addEventListener('input',function(){draw()});draw();
 })();
