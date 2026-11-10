@@ -255,6 +255,31 @@ footer .wrap{padding-top:56px;padding-bottom:140px;display:flex;flex-wrap:wrap;g
   .mbar{display:flex}
   footer .wrap{padding-bottom:110px}
 }
+
+/* ===== 버튼·색 위계 정리 (2026-11): 주황 채움은 '누르는 주요 버튼'에만 ===== */
+.band a{background:none;padding:0;border-radius:0;color:var(--o-text);text-decoration:underline;text-underline-offset:3px;font-size:14px}
+.hero h1 em{color:var(--g);background:linear-gradient(transparent 60%,var(--o-light) 60%)}
+.dot{background:var(--g)}
+.y-big{color:var(--g)}
+.card-a .tag{background:var(--o-light);color:var(--o-text)}
+.card-b .num strong{color:#fff}
+.card-a li b{color:var(--o-text)}
+.card-b li b{color:var(--o-light)}
+.step span{color:var(--o-text)}
+.case strong em{color:var(--o-text)}
+.chip.on{background:var(--o-light);border-color:var(--o);color:var(--o-text)}
+.opt.on i{background:var(--o-text);border-color:var(--o-text)}
+.diag{box-shadow:0 18px 50px rgba(64,64,64,.10);border-top:5px solid var(--o-light)}
+.bar{border:1px solid var(--border)}
+.f-r a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.bar,.mbar{transition:opacity .2s,transform .2s}
+.bar.off{opacity:0;pointer-events:none}
+.mbar.off{opacity:0;pointer-events:none;transform:translateY(20px)}
+@media (max-width:760px){
+  .call{background:#fff;color:var(--g);border:1.5px solid var(--g)}
+  .call:hover{color:var(--g)}
+  .call svg{stroke:currentColor}
+}
 </style>
 </head>
 <body>
@@ -550,6 +575,12 @@ wcs_add["wa"] = "1d020dcbaf1ef70";
 if(window.wcs) {
 wcs_do();
 }
+</script>
+<script>
+/* 상담 폼이 보이는 동안 하단 고정 버튼 숨김 */
+(function(){var f=document.getElementById('diagnose');if(!f||!('IntersectionObserver' in window))return;
+var b=document.querySelectorAll('.bar,.mbar');
+new IntersectionObserver(function(e){b.forEach(function(x){x.classList.toggle('off',e[0].isIntersecting)})},{threshold:0.15}).observe(f);})();
 </script>
 </body>
 </html>
