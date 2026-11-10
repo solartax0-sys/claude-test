@@ -1,0 +1,94 @@
+# 솔라세무회계 (안산 세무사 설나현)
+
+> 경기도 안산시 단원구 광덕서로 68, 608호(고잔동, 삼영빌딩)에 있는 세무사 사무소예요. 세무사 설나현이 상속세·증여세·양도소득세 신고와 절세 설계, 가족법인, 개인사업자·법인 기장, 기업진단, 세무조사 대응을 직접 맡습니다. 사무실 방문, 전국 출장, 비대면 상담이 모두 가능해요.
+
+- 대표: 설나현 세무사 (세무 경력 11년차, 대형 세무법인 본점에서 세무조사 대응 경험)
+- 상담 전화: 031-522-5757
+- 무료 1차 진단 신청: https://solartax.kr/#diagnose
+- 네이버 블로그: https://blog.naver.com/solar_tax
+
+## 서비스
+
+- [상속·증여·가족법인](https://solartax.kr/inheritance/): 재산 평가, 사전증여 설계, 가족법인, 상속세 세무조사 대응
+- [양도소득세](https://solartax.kr/transfer/): 1세대 1주택 비과세, 일시적 2주택, 상속받은 집 매도, 매도 전 절세 검토
+- [기장·법인](https://solartax.kr/bookkeeping/): 개인사업자·법인 기장, 부가세·종합소득세·법인세 신고, 법인 설립·전환, 기업진단, 세무조사 대응
+
+## 세무 칼럼
+
+각 칼럼은 설나현 세무사가 직접 쓴 글이며, 글마다 3줄 요약과 자주 묻는 질문이 있어요. 세법은 개정될 수 있으니 실제 적용 전에는 상담으로 확인하세요.
+
+### 상속
+
+- [상속세 신고기한 6개월, 무엇부터 순서대로 할까](https://solartax.kr/columns/inheritance-tax-deadline-6months.html): 부모님이 돌아가신 뒤 상속세 신고기한 6개월 안에 해야 할 일을 순서대로 정리했어요. 재산 조회부터 신고·납부까지.
+- [배우자 상속공제, 최대 30억 원을 받으려면](https://solartax.kr/columns/spouse-inheritance-deduction.html): 배우자 상속공제는 최소 5억 원, 최대 30억 원까지예요. 실제로 많이 받으려면 분할 기한과 법정상속분을 알아야 해요.
+- [부모님과 10년 함께 산 집, 동거주택 상속공제 6억 원](https://solartax.kr/columns/cohabiting-house-deduction.html): 부모님을 모시고 10년 이상 한집에 산 자녀가 그 집을 상속받으면 최대 6억 원을 공제받을 수 있어요. 요건을 정리했어요.
+- [예금·주식이 있으면 받는 금융재산 상속공제](https://solartax.kr/columns/financial-asset-deduction.html): 상속재산 중 예금·적금·주식 같은 금융재산은 최대 2억 원까지 추가로 공제돼요. 계산 방법과 빠지는 경우를 정리했어요.
+- [돌아가시기 전 인출한 현금, 추정상속재산이 될 수 있어요](https://solartax.kr/columns/presumed-inheritance-cash.html): 돌아가시기 전 1년 안에 2억 원, 2년 안에 5억 원 이상 인출했는데 쓴 곳을 밝히지 못하면 상속재산으로 추정돼요.
+- [상속 부동산 감정평가, 받는 게 유리한 경우](https://solartax.kr/columns/inheritance-appraisal.html): 상속받은 부동산을 감정평가로 신고할지 기준시가로 신고할지에 따라 상속세와 나중 양도세가 달라져요. 판단 기준을 정리했어요.
+- [상속재산 협의분할, 등기 전에 정해야 세금이 줄어요](https://solartax.kr/columns/inheritance-division-agreement.html): 상속인끼리 재산을 나누는 협의분할은 시기가 중요해요. 신고기한이 지나 다시 나누면 증여세가 나올 수 있어요.
+- [상속세 낼 현금이 없을 때, 연부연납과 물납](https://solartax.kr/columns/inheritance-installment-payment.html): 상속재산이 대부분 부동산이라 세금 낼 현금이 부족하다면 최대 10년 나눠 내는 연부연납이나 물납을 검토할 수 있어요.
+- [병원비·장례비·전세보증금, 상속재산에서 빼 주는 것들](https://solartax.kr/columns/inheritance-debts-funeral.html): 상속세는 재산에서 빚과 장례비를 뺀 금액에 매겨요. 빠뜨리기 쉬운 공제 항목과 필요한 증빙을 정리했어요.
+- [빚이 더 많을 때, 상속포기와 한정승인 세금 차이](https://solartax.kr/columns/renounce-or-limited-acceptance.html): 돌아가신 분의 빚이 재산보다 많을 때 상속포기와 한정승인 중 무엇을 고를지, 세금 측면에서 놓치기 쉬운 점을 정리했어요.
+- [안산 상속세 신고, 집값을 얼마로 적느냐가 나중 양도세를 정해요](https://solartax.kr/columns/inherited-house-capital-gains.html): 상속받은 집을 상속세 신고 때 얼마로 평가하느냐에 따라 나중에 팔 때 양도세가 크게 달라지는 이유를 정리했어요.
+- [상속세가 0원이어도 신고해 두면 좋은 이유](https://solartax.kr/columns/inheritance-zero-tax-filing.html): 낼 상속세가 없어도 상속세 신고를 해 두면 나중의 양도세와 세무 분쟁에서 유리해지는 이유를 정리했어요.
+- [명의만 빌려준 주식, 상속 때 세금 폭탄이 되는 이유](https://solartax.kr/columns/nominee-stock-inheritance.html): 예전에 이름만 빌려준 비상장주식이 상속 때 상속재산으로 잡히거나 증여세 문제가 생기는 구조와 대응 방향을 정리했어요.
+- [상속세 조사, 통장은 몇 년 치까지 볼까](https://solartax.kr/columns/inheritance-audit-bank.html): 상속세 조사에서 금융거래를 어디까지 확인하는지, 인출금 소명은 어떻게 준비하는지 정리했어요.
+
+### 증여
+
+- [결혼·출산 때 1억 원 더, 혼인·출산 증여공제](https://solartax.kr/columns/marriage-birth-gift-deduction.html): 결혼하거나 아이를 낳은 자녀에게 부모가 재산을 주면 기본공제 외에 1억 원을 더 공제받을 수 있어요.
+- [자녀에게 돈 빌려줄 때, 차용증만으로 충분할까](https://solartax.kr/columns/parent-child-loan-agreement.html): 부모가 자녀에게 돈을 빌려줄 때 증여로 보지 않으려면 차용증, 이자, 실제 상환 기록이 함께 있어야 해요.
+- [아이 이름으로 미리 증여, 10년 주기 계획 세우기](https://solartax.kr/columns/minor-child-gift-plan.html): 미성년 자녀는 10년마다 2천만 원, 성인이 되면 5천만 원까지 증여세 없이 받을 수 있어요. 일찍 시작할수록 커지는 이유를 정리했어요.
+- [집 살 때 부모님 돈, 자금출처 조사에서 묻는 것](https://solartax.kr/columns/house-purchase-fund-source.html): 집을 살 때 낸 자금계획서와 실제 돈의 흐름이 다르면 자금출처 조사를 받을 수 있어요. 미리 정리할 점을 알려드려요.
+- [부담부증여, 언제 유리하고 언제 손해일까](https://solartax.kr/columns/burden-gift.html): 대출이나 전세보증금을 함께 넘기는 부담부증여가 유리한 경우와 손해 보는 경우를 정리했어요.
+- [10년 안 증여는 다시 합쳐진다, 사전증여 시기 정하기](https://solartax.kr/columns/prior-gift-10years.html): 미리 증여한 재산이 상속세와 증여세에서 다시 합산되는 10년 규칙과 증여 시기를 정하는 방법을 정리했어요.
+
+### 양도
+
+- [1세대 1주택 비과세, 12억 원 기준과 2년 요건](https://solartax.kr/columns/one-house-capital-gains-exemption.html): 집 한 채를 팔 때 양도세가 비과세되는 1세대 1주택 요건과, 12억 원을 넘는 집의 세금 계산 방법을 정리했어요.
+- [이사하다 집이 두 채, 일시적 2주택 비과세 3년 규칙](https://solartax.kr/columns/temporary-two-houses.html): 새 집을 먼저 사서 잠시 2주택이 됐다면, 일정 기간 안에 기존 집을 팔면 1주택처럼 비과세받을 수 있어요.
+- [양도세 예정신고, 판 달 말일부터 2개월이에요](https://solartax.kr/columns/capital-gains-preliminary-filing.html): 부동산을 팔면 양도한 달의 말일부터 2개월 안에 양도세를 예정신고해야 해요. 기한과 함께 챙길 서류를 정리했어요.
+- [농지 8년 자경 감면, 직접 농사지었다는 증명이 핵심](https://solartax.kr/columns/farmland-8years-reduction.html): 농지를 8년 이상 직접 경작하다 팔면 양도세를 감면받을 수 있어요. 재촌·자경 요건과 증명 자료를 정리했어요.
+
+### 가족법인·법인 주택
+
+- [법인으로 집 사면 생기는 세금 세 가지](https://solartax.kr/columns/corporation-buying-house.html): 법인 명의로 주택을 사면 취득세, 종합부동산세, 팔 때 법인세가 개인보다 크게 무거워요. 미리 알아야 할 점을 정리했어요.
+- [가족법인으로 자녀에게 재산 넘기기, 득과 실](https://solartax.kr/columns/family-corporation.html): 가족법인을 세워 자녀에게 재산을 옮기는 방식의 장점과 꼭 알아야 할 세금 함정을 정리했어요.
+
+### 세무조사
+
+- [세무조사 통지를 받았을 때 가장 먼저 할 일](https://solartax.kr/columns/tax-audit-notice-first-steps.html): 세무조사 사전통지를 받았다면 당황하지 말고 조사 범위와 기간부터 확인하세요. 준비 순서와 납세자 권리를 정리했어요.
+
+### 기업진단
+
+- [안산 기업진단, 건설업 신규·갱신 때 미리 준비할 것](https://solartax.kr/columns/construction-business-diagnosis.html): 건설업 등록과 실태조사에 필요한 기업진단에서 자본금 인정이 안 되는 경우와 준비 방법을 정리했어요.
+
+### 기장·법인·부가세·종합소득세
+
+- [3월 법인세 신고, 대표님이 미리 챙길 것](https://solartax.kr/columns/corporate-tax-filing-march.html): 12월 결산 법인은 3월 말까지 법인세를 신고해요. 결산 전에 대표님이 확인해야 할 항목을 정리했어요.
+- [부가세 매입세액, 공제 안 되는 대표적인 다섯 가지](https://solartax.kr/columns/vat-input-tax-not-deductible.html): 세금계산서를 받아도 부가세를 돌려받지 못하는 매입이 있어요. 승용차, 접대비 등 공제 안 되는 항목을 정리했어요.
+- [세금계산서 발급, 다음 달 10일을 넘기면](https://solartax.kr/columns/tax-invoice-deadline-penalty.html): 세금계산서는 거래한 날 또는 월합계로 다음 달 10일까지 발급해야 해요. 늦거나 안 하면 생기는 가산세를 정리했어요.
+- [간이과세자, 부가세가 거의 없는 대신 알아둘 것](https://solartax.kr/columns/simplified-taxpayer-guide.html): 연 매출 1억 400만 원 미만 개인사업자는 간이과세자가 될 수 있어요. 납부면제 기준과 세금계산서, 일반과세 전환을 정리했어요.
+- [5월 종합소득세, 사업소득 말고도 합쳐야 하는 것들](https://solartax.kr/columns/may-income-tax-filing.html): 5월 종합소득세 신고에는 사업소득뿐 아니라 이자·배당, 기타소득, 연금소득 등이 함께 합산될 수 있어요.
+- [주택 월세·전세 받는 분, 임대소득세 기준](https://solartax.kr/columns/house-rental-income-tax.html): 주택을 세놓고 받는 월세와 보증금은 부부 합산 주택 수에 따라 과세 여부가 달라요. 신고 기준을 정리했어요.
+- [법인 대표, 급여로 받을까 배당으로 받을까](https://solartax.kr/columns/ceo-salary-vs-dividend.html): 법인 대표가 회사 이익을 가져가는 방법은 급여와 배당이에요. 세금과 4대보험, 비용 처리 차이를 정리했어요.
+- [설비 투자나 수출이 있다면, 부가세 조기환급](https://solartax.kr/columns/vat-early-refund.html): 기계·인테리어 등 설비에 투자했거나 수출 매출이 있으면 부가세를 확정신고까지 기다리지 않고 빨리 돌려받을 수 있어요.
+- [법인 대표 퇴직금, 정관에 먼저 써 둬야 해요](https://solartax.kr/columns/executive-retirement-pay.html): 법인 대표의 퇴직금은 정관 규정이 있어야 비용으로 인정되고, 세금도 유리해요. 미리 준비할 점을 정리했어요.
+- [현금영수증 의무발행업종, 10만 원 이상이면 꼭](https://solartax.kr/columns/cash-receipt-mandatory.html): 현금영수증 의무발행업종은 10만 원 이상 현금 거래 때 손님이 요청하지 않아도 현금영수증을 발급해야 해요.
+- [개인사업자 간편장부와 복식부기, 우리 가게는 어느 쪽일까](https://solartax.kr/columns/simple-vs-double-entry-bookkeeping.html): 개인사업자는 매출 규모와 업종에 따라 간편장부 또는 복식부기로 장부를 써야 해요. 기준과 장부를 안 쓰면 생기는 일을 정리했어요.
+- [성실신고확인대상, 기준 금액과 미리 챙길 것](https://solartax.kr/columns/sincere-filing-confirmation.html): 매출이 일정 규모를 넘는 개인사업자는 종합소득세를 성실신고확인을 받아 6월 말까지 신고해요. 기준과 준비할 점을 정리했어요.
+- [개인사업자 법인 전환, 언제 하는 게 맞을까](https://solartax.kr/columns/sole-proprietor-to-corporation.html): 개인사업자에서 법인으로 바꾸면 세율은 낮아지지만 돈을 꺼내 쓰는 방식이 달라져요. 전환 시기를 판단하는 기준을 정리했어요.
+- [법인 가지급금, 대표님 통장처럼 쓰면 생기는 일](https://solartax.kr/columns/corporate-provisional-payment.html): 법인 통장에서 증빙 없이 나간 돈은 대표 가지급금이 돼요. 쌓이면 생기는 세금 문제와 정리 방법을 정리했어요.
+- [업무용 승용차 비용, 어디까지 인정될까](https://solartax.kr/columns/business-car-expense.html): 법인과 복식부기 개인사업자의 업무용 승용차 비용은 운행기록과 감가상각 한도에 따라 인정 범위가 달라져요.
+- [직원 첫 채용, 원천세·4대보험·지급명세서 순서](https://solartax.kr/columns/first-employee-payroll.html): 처음 직원을 뽑은 사업자가 챙겨야 할 근로계약, 4대보험 신고, 원천세 신고와 연말정산 일정을 순서대로 정리했어요.
+- [안산 창업 첫해, 놓치기 쉬운 세금 일정](https://solartax.kr/columns/startup-first-year-tax.html): 사업자등록부터 첫 부가세·종합소득세 신고까지, 창업 첫해에 놓치기 쉬운 세금 일정과 준비할 점을 정리했어요.
+- [기장 세무사 바꾸기, 연중에도 가능할까](https://solartax.kr/columns/switch-tax-accountant.html): 연락이 잘 안 되거나 신고 결과가 불안해 기장 세무사를 바꾸고 싶을 때, 시기와 절차, 미리 확인할 점을 정리했어요.
+- [접대비(기업업무추진비) 한도와 증빙, 이것만은 지키세요](https://solartax.kr/columns/entertainment-expense-limit.html): 거래처 식사·선물 비용은 기업업무추진비로 한도 안에서만 비용이 돼요. 한도 계산과 증빙 규칙을 정리했어요.
+- [사업용 계좌·카드 등록, 안 하면 생기는 가산세](https://solartax.kr/columns/business-account-card.html): 복식부기의무 개인사업자는 사업용 계좌를 국세청에 신고하고 써야 해요. 사업용 카드 등록과 함께 꼭 챙길 점을 정리했어요.
+- [안산 법인 기장, 장부만 맡기면 대표 주식은 아무도 안 봐요](https://solartax.kr/columns/corporate-bookkeeping-ceo-stock.html): 법인 기장을 맡겨도 대표님 주식 가치와 가지급금은 따로 챙겨야 하는 이유를 정리했어요.
+- [1월 부가세 확정신고, 법인 대표님이 챙길 5가지](https://solartax.kr/columns/january-vat-corporation.html): 1월 25일까지인 부가세 확정신고에서 법인 대표님이 미리 챙기면 좋은 다섯 가지를 정리했어요.
+
+## 기타
+
+- [전체 칼럼 목록](https://solartax.kr/columns/)
+- [개인정보처리방침](https://solartax.kr/privacy.html)
