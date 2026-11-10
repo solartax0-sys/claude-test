@@ -2,11 +2,12 @@
 <html lang="ko">
 <head>
 <!-- Google tag -->
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-K5TWG9N9"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7H3RL8NGP1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  gtag('config', 'G-7H3RL8NGP1');
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -144,7 +145,7 @@ async function send(e){e.preventDefault();var f=e.target,el=f.elements,b=f.query
 function g(k,d){try{return sessionStorage.getItem(k)||d}catch(x){return d}}
 try{var r=await fetch('https://formsubmit.co/ajax/solartax@solartax.kr',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({'이름':el['name'].value.trim(),'연락처':el['tel'].value.trim(),'상담 분야':'양도','신청 위치':'양도 페이지','유입 경로':g('st_src','알 수 없음'),'처음 본 페이지':g('st_land','/transfer/'),'_subject':'[솔라택스] 상담 신청 - '+el['name'].value.trim()+' (양도)','_captcha':'false'})});
 var d={};try{d=await r.json()}catch(_){}
-if(r.ok&&String(d.success)!=='false'){try{(window.dataLayer=window.dataLayer||[]).push({event:'consult_submit',form:'transfer'})}catch(_){}try{if(window.wcs&&wcs.cnv){var _nasa={};_nasa['cnv']=wcs.cnv('4','1');wcs_do(_nasa)}}catch(_){}f.reset();var t=document.getElementById('toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},3500)}else alert('신청이 접수되지 않았어요. 번거로우시겠지만 031-522-5757로 전화 주세요.')}catch(x){alert('네트워크 오류가 발생했습니다. 031-522-5757로 전화 주세요.')}finally{b.disabled=false;b.textContent=o}return false}
+if(r.ok&&String(d.success)!=='false'){try{gtag('event','consult_submit',{form:'transfer'})}catch(_){}try{if(window.wcs&&wcs.cnv){var _nasa={};_nasa['cnv']=wcs.cnv('4','1');wcs_do(_nasa)}}catch(_){}f.reset();var t=document.getElementById('toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},3500)}else alert('신청이 접수되지 않았어요. 번거로우시겠지만 031-522-5757로 전화 주세요.')}catch(x){alert('네트워크 오류가 발생했습니다. 031-522-5757로 전화 주세요.')}finally{b.disabled=false;b.textContent=o}return false}
 </script>
 <script type="text/javascript" src="https://wcs.pstatic.net/wcslog.js"></script>
 <script type="text/javascript">

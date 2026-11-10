@@ -2,11 +2,12 @@
 <html lang="ko">
 <head>
 <!-- Google tag -->
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-K5TWG9N9"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7H3RL8NGP1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  gtag('config', 'G-7H3RL8NGP1');
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -810,7 +811,7 @@ sessionStorage.setItem('st_src',n);sessionStorage.setItem('st_land',location.pat
   group('opts'); group('chips');
 })();
 function pick(v){document.querySelectorAll('#opts .opt').forEach(function(b){b.classList.toggle('on',b.dataset.v===v)});var s=document.getElementById('bar-type');for(var i=0;i<s.options.length;i++){if(s.options[i].text===v){s.selectedIndex=i}}}
-function track(name,params){try{window.dataLayer=window.dataLayer||[];dataLayer.push(Object.assign({event:name},params||{}))}catch(_){}}
+function track(name,params){try{gtag('event',name,params||{})}catch(_){}}
 document.addEventListener('click',function(e){
   var a=e.target.closest('a'); if(!a) return; var h=a.getAttribute('href')||'';
   var where=a.closest('.mbar')?'하단 고정':a.closest('header')?'헤더':a.closest('.hero')?'첫 화면':a.closest('footer')?'푸터':'본문';
