@@ -314,14 +314,20 @@ footer .wrap{padding-top:56px;padding-bottom:140px;display:flex;flex-wrap:wrap;g
 .career{gap:8px 24px;font-size:14px;color:var(--body)}
 .career li{border-top:none;padding-top:0;padding-left:12px;position:relative}
 .career li:before{content:'';position:absolute;left:0;top:.72em;width:4px;height:4px;border-radius:50%;background:#B5B5B5}
-.about .sns{gap:12px}
-.about .sns a{padding:0;border:none;background:none;font-size:0;gap:0}
-.about .sns span{width:44px;height:44px;font-size:17px}
-.about .sns span svg{transform:scale(1.25)}
 
 .y-r{grid-template-columns:repeat(2,minmax(0,1fr))}
 .blog-more{display:block;margin-top:24px;text-align:center;font-weight:700;font-size:15px;color:var(--o-text);text-decoration:underline;text-underline-offset:4px}
 @media (max-width:760px){.y-r{grid-template-columns:1fr}}
+
+/* 동의 체크: 한 덩어리 글자로 */
+.diag .agree{font-size:13px;gap:8px;align-items:center;line-height:1.4}
+.diag .agree input{width:18px;height:18px;margin:0;flex:none;accent-color:var(--o-text)}
+.diag .agree small{color:#9CA3AF;font-size:12px}
+/* SNS: 네 칸 한 줄 */
+.about .sns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:440px}
+.about .sns a{justify-content:center;gap:6px;padding:8px 4px;font-size:13px;white-space:nowrap}
+.about .sns span{width:22px;height:22px;font-size:12px;flex:none}
+.about .sns span svg{transform:scale(.85)}
 </style>
 </head>
 <body>
@@ -383,7 +389,7 @@ footer .wrap{padding-top:56px;padding-bottom:140px;display:flex;flex-wrap:wrap;g
         <input type="text" name="name" placeholder="이름" aria-label="이름" required>
         <input type="tel" name="tel" placeholder="연락처" aria-label="연락처" required>
       </div>
-      <label class="agree"><input type="checkbox" name="agree" required> 상담 연락을 위한 <a href="/privacy.html" target="_blank">개인정보 수집·이용</a>에 동의합니다</label>
+      <label class="agree"><input type="checkbox" name="agree" required> <span>상담 연락용 <a href="/privacy.html" target="_blank">개인정보 수집·이용</a> 동의</span></label>
       <button class="btn btn-o" type="submit">세무사 직접 전화 받기</button>
       <p class="note">1차 진단 전화에서는 신고 실익이 있는지, 어떤 서비스가 맞는지 안내해 드립니다. 예상 세액은 방문 상담에서 자료를 보고 산출합니다.</p>
     </form>
@@ -488,8 +494,8 @@ footer .wrap{padding-top:56px;padding-bottom:140px;display:flex;flex-wrap:wrap;g
       <div class="sns">
         <a href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener"><span style="background:#03C75A">N</span>블로그</a>
         <a href="https://www.youtube.com/@solar_tax" target="_blank" rel="noopener"><span style="background:#FF0000"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"></path></svg></span>유튜브</a>
-        <a href="https://www.instagram.com/solartax/" target="_blank" rel="noopener"><span style="background:#D6249F"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"></circle></svg></span>인스타그램</a>
-        <a href="http://pf.kakao.com/_DPjcb/chat" target="_blank" rel="noopener"><span style="background:#FEE500"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 6l-1 3.6 4.1-2.7c.6.1 1.1.1 1.7.1 5 0 9-3.1 9-7s-4-7-9-7z" fill="#3A1D1D"></path></svg></span>카톡 상담</a>
+        <a href="https://www.instagram.com/solartax/" target="_blank" rel="noopener"><span style="background:#D6249F"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"></circle></svg></span>인스타</a>
+        <a href="http://pf.kakao.com/_DPjcb/chat" target="_blank" rel="noopener"><span style="background:#FEE500"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 6l-1 3.6 4.1-2.7c.6.1 1.1.1 1.7.1 5 0 9-3.1 9-7s-4-7-9-7z" fill="#3A1D1D"></path></svg></span>카톡</a>
       </div>
     </div>
   </div>
