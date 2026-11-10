@@ -159,6 +159,9 @@ nav a{color:var(--g);text-decoration:none}nav a:hover{color:var(--o-text)}
 .case strong{font-size:24px;line-height:1.35;font-weight:800}
 .case strong em{font-style:normal;color:var(--o)}
 .case p{margin:0;font-size:14px;color:var(--muted)}
+a.case{text-decoration:none;color:var(--g);transition:box-shadow .2s,transform .2s}
+a.case:hover{color:var(--g);transform:translateY(-2px);box-shadow:0 10px 30px rgba(64,64,64,.12)}
+.case .more{margin-top:auto;font-size:14px;font-weight:700;color:var(--o-text)}
 
 /* 소개 */
 .about .wrap{display:flex;flex-wrap:wrap;gap:56px;align-items:center}
@@ -357,7 +360,7 @@ footer .wrap{padding-top:56px;padding-bottom:140px;display:flex;flex-wrap:wrap;g
       <div><span class="eyebrow">업무사례</span><h2>결과는 숫자로 말합니다</h2></div>
     </div>
     <div class="cases">
-      <article class="case"><span class="tag">세무조사</span><strong>법인 부가세 조사<br>추징 없이 종결</strong><p>삼성세무서 법인 부가가치세 조사, 개업 첫 해 수임 사건</p></article>
+      <a class="case" href="https://blog.naver.com/solar_tax/222869280346" target="_blank" rel="noopener"><span class="tag">세무조사</span><strong>법인 부가세 조사<br>추징 없이 종결</strong><p>삼성세무서 법인 부가가치세 조사, 개업 첫 해 수임 사건</p><span class="more">사례 자세히 보기 →</span></a>
       <article class="case"><span class="tag">상속세 · 비상장주식</span><strong>예상 상속세 3억 원<br><em>→ 0원</em></strong><p>명의만 빌려준 비상장주식이 상속재산으로 잡힌 명의신탁 사건, 변호사와 협업해 절세안 설계</p></article>
     </div>
   </div>
