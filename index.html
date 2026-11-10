@@ -257,7 +257,6 @@ footer .wrap{padding-top:56px;padding-bottom:140px;display:flex;flex-wrap:wrap;g
 }
 
 /* ===== 버튼·색 위계 정리 (2026-11): 주황 채움은 '누르는 주요 버튼'에만 ===== */
-.band a{background:none;padding:0;border-radius:0;color:var(--o-text);text-decoration:underline;text-underline-offset:3px;font-size:14px}
 .hero h1 em{color:var(--g);background:linear-gradient(transparent 60%,var(--o-light) 60%)}
 .dot{background:var(--g)}
 .y-big{color:var(--g)}
@@ -280,14 +279,28 @@ footer .wrap{padding-top:56px;padding-bottom:140px;display:flex;flex-wrap:wrap;g
   .call:hover{color:var(--g)}
   .call svg{stroke:currentColor}
 }
+
+/* 상단 띠: 진갈색 톤온톤 배너, 띠 전체가 링크 */
+.band{background:#4A2F00;color:#FBE9C6;text-decoration:none;flex-wrap:nowrap;padding:11px 20px;gap:14px}
+.band:hover{color:#fff}
+.band strong{color:#fff}
+.band em{font-style:normal;font-weight:700;color:#F7B733;white-space:nowrap}
+.mo-only{display:none}
+@media (max-width:760px){
+  .pc-only{display:none}.mo-only{display:inline}
+  .band{font-size:13px;padding:10px 16px;gap:10px;justify-content:space-between;text-align:left}
+  .band em{font-size:13px}
+}
+.toast{transform:translate(-50%,-250%)}.toast.show{transform:translate(-50%,0)}
 </style>
 </head>
 <body>
 
-<div class="band">
-  <span>상속이 막 시작되셨나요? <strong>신고하면 실익이 있을지</strong>부터 세무사가 직접 전화로 알려드립니다</span>
-  <a href="#diagnose">무료 1차 진단 신청</a>
-</div>
+<a class="band" href="#diagnose">
+  <span class="pc-only">상속이 막 시작되셨나요? <strong>신고하면 실익이 있을지</strong>부터 세무사가 직접 전화로 알려드립니다</span>
+  <span class="mo-only">상속 신고, <strong>실익이 있는지</strong>부터 알려드려요</span>
+  <em><span class="pc-only">무료 1차 진단 신청 →</span><span class="mo-only">무료 진단 →</span></em>
+</a>
 
 <header>
   <div class="wrap head">
@@ -577,10 +590,13 @@ wcs_do();
 }
 </script>
 <script>
-/* 상담 폼이 보이는 동안 하단 고정 버튼 숨김 */
-(function(){var f=document.getElementById('diagnose');if(!f||!('IntersectionObserver' in window))return;
-var b=document.querySelectorAll('.bar,.mbar');
-new IntersectionObserver(function(e){b.forEach(function(x){x.classList.toggle('off',e[0].isIntersecting)})},{threshold:0.15}).observe(f);})();
+/* 상담 폼이 화면 가운데 오거나 푸터가 보이면 하단 고정 버튼 숨김 */
+(function(){if(!('IntersectionObserver' in window))return;
+var b=document.querySelectorAll('.bar,.mbar'),on=new Set();
+function cb(es){es.forEach(function(e){e.isIntersecting?on.add(e.target):on.delete(e.target)});b.forEach(function(x){x.classList.toggle('off',on.size>0)})}
+var f=document.getElementById('diagnose'),ft=document.querySelector('footer');
+if(f)new IntersectionObserver(cb,{rootMargin:'-40% 0px -40% 0px'}).observe(f);
+if(ft)new IntersectionObserver(cb).observe(ft);})();
 </script>
 </body>
 </html>
