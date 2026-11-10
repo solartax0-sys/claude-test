@@ -544,6 +544,12 @@ footer .wrap{display:flex;flex-direction:column;gap:28px;padding-top:48px;paddin
 /* 오시는 길 버튼 3개 한 줄 */
 .map-btns{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:420px}
 .map-btns a{text-align:center;white-space:nowrap;padding:11px 4px}
+
+/* 휴대폰 메뉴 5개: 한 줄, 폭에 맞춰 고르게 */
+@media (max-width:760px){
+  header nav,.top .gnav{flex-wrap:nowrap!important;justify-content:space-between!important;gap:4px 8px!important;overflow:visible!important}
+  header nav a,.top .gnav a{white-space:nowrap}
+}
 </style>
 </head>
 <body>
@@ -563,7 +569,7 @@ footer .wrap{display:flex;flex-direction:column;gap:28px;padding-top:48px;paddin
       <a class="pc-nav" href="/transfer/">양도</a>
       <a href="#cases">업무사례</a>
       <a class="pc-nav" href="#about">세무사 소개</a>
-      <a class="pc-nav" href="#column">칼럼</a>
+      <a href="#column">칼럼</a>
       <a href="#location">오시는 길</a>
     </nav>
     <a class="call" href="tel:0315225757">
