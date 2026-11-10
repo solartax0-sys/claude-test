@@ -292,14 +292,24 @@ footer .wrap{padding-top:56px;padding-bottom:140px;display:flex;flex-wrap:wrap;g
   .band em{font-size:13px}
 }
 .toast{transform:translate(-50%,-250%)}.toast.show{transform:translate(-50%,0)}
+
+/* 모바일 첫 화면 정리 */
+@media (max-width:760px){
+  .band{justify-content:center;gap:8px}
+  .call{width:42px;height:42px;padding:0;justify-content:center;font-size:0;gap:0}
+  .call svg{width:18px;height:18px}
+  .hero .wrap{padding-top:36px}
+  .hero-l{gap:18px}
+  .points{gap:6px 16px;font-size:14px}
+}
 </style>
 </head>
 <body>
 
 <a class="band" href="#diagnose">
   <span class="pc-only">상속이 막 시작되셨나요? <strong>신고하면 실익이 있을지</strong>부터 세무사가 직접 전화로 알려드립니다</span>
-  <span class="mo-only">상속 신고, <strong>실익이 있는지</strong>부터 알려드려요</span>
-  <em><span class="pc-only">무료 1차 진단 신청 →</span><span class="mo-only">무료 진단 →</span></em>
+  <span class="mo-only">상속세, <strong>신고 실익</strong>부터 무료로</span>
+  <em><span class="pc-only">무료 1차 진단 신청 →</span><span class="mo-only">진단 →</span></em>
 </a>
 
 <header>
@@ -333,12 +343,6 @@ footer .wrap{padding-top:56px;padding-bottom:140px;display:flex;flex-wrap:wrap;g
         <li><i class="dot"></i>대형 세무법인 세무조사 대응 출신</li>
         <li><i class="dot"></i>안산 토박이, 출장 상담 가능</li>
       </ul>
-      <div class="sns">
-        <a href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener"><span style="background:#03C75A">N</span>블로그</a>
-        <a href="https://www.youtube.com/@solar_tax" target="_blank" rel="noopener"><span style="background:#FF0000"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"></path></svg></span>유튜브</a>
-        <a href="https://www.instagram.com/solartax/" target="_blank" rel="noopener"><span style="background:#D6249F"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"></circle></svg></span>인스타그램</a>
-        <a href="http://pf.kakao.com/_DPjcb/chat" target="_blank" rel="noopener"><span style="background:#FEE500"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 6l-1 3.6 4.1-2.7c.6.1 1.1.1 1.7.1 5 0 9-3.1 9-7s-4-7-9-7z" fill="#3A1D1D"></path></svg></span>카톡 상담</a>
-      </div>
     </div>
 
     <form class="diag" id="diagnose" aria-label="무료 1차 진단 신청" onsubmit="return send(event,'diag')">
@@ -460,6 +464,12 @@ footer .wrap{padding-top:56px;padding-bottom:140px;display:flex;flex-wrap:wrap;g
         <li>시대에듀 관세사 회계학 강의 · 교재 편저</li>
         <li>한양대학교 졸업 · 안산동산고</li>
       </ul>
+      <div class="sns">
+        <a href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener"><span style="background:#03C75A">N</span>블로그</a>
+        <a href="https://www.youtube.com/@solar_tax" target="_blank" rel="noopener"><span style="background:#FF0000"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"></path></svg></span>유튜브</a>
+        <a href="https://www.instagram.com/solartax/" target="_blank" rel="noopener"><span style="background:#D6249F"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"></circle></svg></span>인스타그램</a>
+        <a href="http://pf.kakao.com/_DPjcb/chat" target="_blank" rel="noopener"><span style="background:#FEE500"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 6l-1 3.6 4.1-2.7c.6.1 1.1.1 1.7.1 5 0 9-3.1 9-7s-4-7-9-7z" fill="#3A1D1D"></path></svg></span>카톡 상담</a>
+      </div>
     </div>
   </div>
 </section>
