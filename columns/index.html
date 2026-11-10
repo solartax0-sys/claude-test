@@ -203,7 +203,7 @@ function fit(){var mob=window.matchMedia('(max-width:760px)').matches;
   el.style.whiteSpace='nowrap';
   var need=el.scrollWidth-pad,have=el.clientWidth-pad,over=need-have;
   if(over<=0)return;
-  if(over<=fs*3&&have/need>=0.86){el.style.letterSpacing='-0.02em';need=el.scrollWidth-pad;
+  if(over<=fs*1.6&&have/need>=0.95){el.style.letterSpacing='-0.02em';need=el.scrollWidth-pad;
    if(need>have)el.style.fontSize=(fs*have/need*0.99).toFixed(2)+'px';}
   else el.style.whiteSpace='';
  });}
