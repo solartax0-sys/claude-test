@@ -143,7 +143,8 @@ sessionStorage.setItem('st_src',n);sessionStorage.setItem('st_land',location.pat
 async function send(e){e.preventDefault();var f=e.target,el=f.elements,b=f.querySelector('button'),o=b.textContent;b.disabled=true;b.textContent='신청 중...';
 function g(k,d){try{return sessionStorage.getItem(k)||d}catch(x){return d}}
 try{var r=await fetch('https://formsubmit.co/ajax/solartax@solartax.kr',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({'이름':el['name'].value.trim(),'연락처':el['tel'].value.trim(),'상담 분야':'상속·증여','신청 위치':'상속·증여 페이지','유입 경로':g('st_src','알 수 없음'),'처음 본 페이지':g('st_land','/inheritance/'),'_subject':'[솔라택스] 상담 신청 - '+el['name'].value.trim()+' (상속·증여)','_captcha':'false'})});
-if(r.ok){f.reset();var t=document.getElementById('toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},3500)}else alert('신청 중 오류가 발생했습니다. 031-522-5757로 전화 주세요.')}catch(x){alert('네트워크 오류가 발생했습니다. 031-522-5757로 전화 주세요.')}finally{b.disabled=false;b.textContent=o}return false}
+var d={};try{d=await r.json()}catch(_){}
+if(r.ok&&String(d.success)!=='false'){try{(window.dataLayer=window.dataLayer||[]).push({event:'consult_submit',form:'inheritance'})}catch(_){}try{if(window.wcs&&wcs.cnv){var _nasa={};_nasa['cnv']=wcs.cnv('4','1');wcs_do(_nasa)}}catch(_){}f.reset();var t=document.getElementById('toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},3500)}else alert('신청이 접수되지 않았어요. 번거로우시겠지만 031-522-5757로 전화 주세요.')}catch(x){alert('네트워크 오류가 발생했습니다. 031-522-5757로 전화 주세요.')}finally{b.disabled=false;b.textContent=o}return false}
 </script>
 <script type="text/javascript" src="https://wcs.pstatic.net/wcslog.js"></script>
 <script type="text/javascript">
