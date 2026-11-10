@@ -166,7 +166,9 @@ footer .wrap>*{max-width:none!important}
   header nav a,.top .gnav a{white-space:nowrap}
 }
 </style>
-<style>@media(max-width:760px){.pcbr{display:none}}/* 작은 글씨 키움 */.cols a>span,.list a>span,a.col>span,.case .t,.case .tag,.tag{font-size:14px!important}.rv small,.case-note{font-size:13px!important}</style>
+<style>@media(max-width:760px){.pcbr{display:none}}/* 작은 글씨 키움 */.cols a>span,.list a>span,a.col>span,.case .t,.case .tag,.tag{font-size:14px!important}.rv small,.case-note{font-size:13px!important}@media(max-width:760px){.stat{align-items:center;text-align:center}.stat a{align-self:stretch}.apply{flex-direction:column;align-items:stretch;text-align:center}.apply>div{width:100%}.apply form{max-width:none;width:100%}.apply label{justify-content:center}}
+h1,h2,h3{text-wrap:balance}p,li{text-wrap:pretty}
+</style>
 </head>
 <body>
 <a class="band" href="#apply"><span class="pc-only">상속이 막 시작되셨나요? <strong>신고하면 실익이 있을지</strong>부터 세무사가 직접 전화로 알려드립니다</span><span class="mo-only">상속세, <strong>신고 실익</strong>부터 무료로</span><em><span class="pc-only">무료 1차 진단 신청 →</span><span class="mo-only">진단 →</span></em></a>
@@ -277,6 +279,25 @@ document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)
 var w=a.closest('.mbar')?'하단 고정':a.closest('.top')?'헤더':'본문';function t(n,p){try{gtag('event',n,p)}catch(_){}}
 if(h.indexOf('tel:')===0)t('phone_click',{where:w});else if(h.indexOf('pf.kakao.com')>-1)t('kakao_click',{where:w});
 else if(h.indexOf('naver.me')>-1)t('booking_click',{where:w});else if(/blog\.naver|youtube|instagram/.test(h))t('channel_click',{where:w});});
+</script>
+<script>
+(function(){
+var SEL='.who div,.cols a strong,.list a strong';
+function fit(){var mob=window.matchMedia('(max-width:760px)').matches;
+ document.querySelectorAll(SEL).forEach(function(el){
+  el.style.fontSize='';el.style.whiteSpace='';el.style.letterSpacing='';
+  if(!mob)return;
+  var cs=getComputedStyle(el),fs=parseFloat(cs.fontSize),pad=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);
+  el.style.whiteSpace='nowrap';
+  var need=el.scrollWidth-pad,have=el.clientWidth-pad,over=need-have;
+  if(over<=0)return;
+  if(over<=fs*3&&have/need>=0.86){el.style.letterSpacing='-0.02em';need=el.scrollWidth-pad;
+   if(need>have)el.style.fontSize=(fs*have/need*0.99).toFixed(2)+'px';}
+  else el.style.whiteSpace='';
+ });}
+var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(fit,150)});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);fit();
+})();
 </script>
 </body>
 </html>

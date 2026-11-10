@@ -102,6 +102,7 @@ main.wrap>*{max-width:860px}
 }
 </style>
 <style>/* 작은 글씨 키움 */.cols a>span,.list a>span,a.col>span,.case .t,.case .tag,.tag{font-size:14px!important}.rv small,.case-note{font-size:13px!important}@media(max-width:760px){.cta{padding:26px 22px;flex-direction:column;align-items:center;text-align:center}.cta>div{width:100%}.cta a{align-self:center}.cta strong{font-size:clamp(15px,4.6vw,19px);letter-spacing:-0.03em;white-space:nowrap;display:block;line-height:1.4}}
+h1,h2,h3{text-wrap:balance}p,li{text-wrap:pretty}
 </style>
 </head>
 <body>
@@ -163,6 +164,25 @@ wcs_add["wa"] = "1d020dcbaf1ef70";
 if(window.wcs) {
 wcs_do();
 }
+</script>
+<script>
+(function(){
+var SEL='.who div,.cols a strong,.list a strong';
+function fit(){var mob=window.matchMedia('(max-width:760px)').matches;
+ document.querySelectorAll(SEL).forEach(function(el){
+  el.style.fontSize='';el.style.whiteSpace='';el.style.letterSpacing='';
+  if(!mob)return;
+  var cs=getComputedStyle(el),fs=parseFloat(cs.fontSize),pad=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);
+  el.style.whiteSpace='nowrap';
+  var need=el.scrollWidth-pad,have=el.clientWidth-pad,over=need-have;
+  if(over<=0)return;
+  if(over<=fs*3&&have/need>=0.86){el.style.letterSpacing='-0.02em';need=el.scrollWidth-pad;
+   if(need>have)el.style.fontSize=(fs*have/need*0.99).toFixed(2)+'px';}
+  else el.style.whiteSpace='';
+ });}
+var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(fit,150)});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);fit();
+})();
 </script>
 </body>
 </html>
