@@ -106,6 +106,10 @@ main.wrap>*{max-width:860px}
 .tabs button{flex:none;font:inherit;font-size:14px;font-weight:700;padding:8px 15px;border-radius:999px;border:1px solid #E5D3AE;background:#fff;color:#404040;cursor:pointer}
 .tabs button.on{background:#404040;border-color:#404040;color:#fff}
 .tabs button em{font-style:normal;font-weight:500;opacity:.7;margin-left:3px}
+.pager{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:22px;flex-wrap:wrap}
+.pager button{min-width:40px;height:40px;font:inherit;font-size:15px;font-weight:700;border-radius:10px;border:1px solid #E5D3AE;background:#fff;color:#404040;cursor:pointer;padding:0 12px}
+.pager button.on{background:#404040;border-color:#404040;color:#fff}
+.pager button:disabled{opacity:.35;cursor:default}
 .noresult{display:none;background:#fff;border-radius:10px;padding:28px 18px;text-align:center;color:#6B7280;font-size:15px}
 .noresult a{color:#8F5A00;font-weight:700}
 </style>
@@ -119,7 +123,8 @@ main.wrap>*{max-width:860px}
 <div class="meta">상속·증여·양도·가족법인·기장·기업진단 · 블로그에는 500편이 더 있어요 → <a href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener">네이버 블로그</a></div>
 <div class="find"><input id="q" type="search" placeholder="칼럼 검색 (예: 증여, 부가세, 통장)" aria-label="칼럼 검색"><div class="tabs" id="tabs" role="tablist"></div></div>
 <div class="noresult" id="none">찾는 내용이 아직 없어요. <a href="https://blog.naver.com/solar_tax" target="_blank" rel="noopener">네이버 블로그</a>에서 더 찾아보시거나 <a href="/#diagnose">무료 1차 진단</a>으로 바로 물어보세요.</div>
-<div class="list"><!--COLLIST--><a href="/columns/inherited-house-capital-gains.html"><span>상속·양도</span><strong>안산 상속세 신고, 집값을 얼마로 적느냐가 나중 양도세를 정해요</strong></a><a href="/columns/inheritance-zero-tax-filing.html"><span>상속</span><strong>상속세가 0원이어도 신고해 두면 좋은 이유</strong></a><a href="/columns/nominee-stock-inheritance.html"><span>상속·비상장주식</span><strong>명의만 빌려준 주식, 상속 때 세금 폭탄이 되는 이유</strong></a><a href="/columns/family-corporation.html"><span>가족법인</span><strong>가족법인으로 자녀에게 재산 넘기기, 득과 실</strong></a><a href="/columns/burden-gift.html"><span>증여·양도</span><strong>부담부증여, 언제 유리하고 언제 손해일까</strong></a><a href="/columns/prior-gift-10years.html"><span>증여·상속</span><strong>10년 안 증여는 다시 합쳐진다, 사전증여 시기 정하기</strong></a><a href="/columns/inheritance-audit-bank.html"><span>상속·세무조사</span><strong>상속세 조사, 통장은 몇 년 치까지 볼까</strong></a><a href="/columns/corporate-bookkeeping-ceo-stock.html"><span>기장·법인</span><strong>안산 법인 기장, 장부만 맡기면 대표 주식은 아무도 안 봐요</strong></a><a href="/columns/january-vat-corporation.html"><span>기장·부가세</span><strong>1월 부가세 확정신고, 법인 대표님이 챙길 5가지</strong></a><a href="/columns/construction-business-diagnosis.html"><span>기업진단</span><strong>안산 기업진단, 건설업 신규·갱신 때 미리 준비할 것</strong></a><!--/COLLIST--></div>
+<div class="list"><!--COLLIST--><a href="/columns/inheritance-tax-deadline-6months.html"><span>상속</span><strong>상속세 신고기한 6개월, 무엇부터 순서대로 할까</strong></a><a href="/columns/simple-vs-double-entry-bookkeeping.html"><span>기장</span><strong>개인사업자 간편장부와 복식부기, 우리 가게는 어느 쪽일까</strong></a><a href="/columns/spouse-inheritance-deduction.html"><span>상속</span><strong>배우자 상속공제, 최대 30억 원을 받으려면</strong></a><a href="/columns/sincere-filing-confirmation.html"><span>기장·종소세</span><strong>성실신고확인대상, 기준 금액과 미리 챙길 것</strong></a><a href="/columns/cohabiting-house-deduction.html"><span>상속</span><strong>부모님과 10년 함께 산 집, 동거주택 상속공제 6억 원</strong></a><a href="/columns/sole-proprietor-to-corporation.html"><span>기장·법인</span><strong>개인사업자 법인 전환, 언제 하는 게 맞을까</strong></a><a href="/columns/financial-asset-deduction.html"><span>상속</span><strong>예금·주식이 있으면 받는 금융재산 상속공제</strong></a><a href="/columns/corporate-provisional-payment.html"><span>기장·법인</span><strong>법인 가지급금, 대표님 통장처럼 쓰면 생기는 일</strong></a><a href="/columns/presumed-inheritance-cash.html"><span>상속·세무조사</span><strong>돌아가시기 전 인출한 현금, 추정상속재산이 될 수 있어요</strong></a><a href="/columns/business-car-expense.html"><span>기장·법인</span><strong>업무용 승용차 비용, 어디까지 인정될까</strong></a><a href="/columns/inheritance-appraisal.html"><span>상속·양도</span><strong>상속 부동산 감정평가, 받는 게 유리한 경우</strong></a><a href="/columns/first-employee-payroll.html"><span>기장·인건비</span><strong>직원 첫 채용, 원천세·4대보험·지급명세서 순서</strong></a><a href="/columns/inheritance-division-agreement.html"><span>상속·증여</span><strong>상속재산 협의분할, 등기 전에 정해야 세금이 줄어요</strong></a><a href="/columns/startup-first-year-tax.html"><span>기장·창업</span><strong>안산 창업 첫해, 놓치기 쉬운 세금 일정</strong></a><a href="/columns/inheritance-installment-payment.html"><span>상속</span><strong>상속세 낼 현금이 없을 때, 연부연납과 물납</strong></a><a href="/columns/switch-tax-accountant.html"><span>기장</span><strong>기장 세무사 바꾸기, 연중에도 가능할까</strong></a><a href="/columns/inheritance-debts-funeral.html"><span>상속</span><strong>병원비·장례비·전세보증금, 상속재산에서 빼 주는 것들</strong></a><a href="/columns/entertainment-expense-limit.html"><span>기장·법인</span><strong>접대비(기업업무추진비) 한도와 증빙, 이것만은 지키세요</strong></a><a href="/columns/renounce-or-limited-acceptance.html"><span>상속</span><strong>빚이 더 많을 때, 상속포기와 한정승인 세금 차이</strong></a><a href="/columns/business-account-card.html"><span>기장</span><strong>사업용 계좌·카드 등록, 안 하면 생기는 가산세</strong></a><a href="/columns/inherited-house-capital-gains.html"><span>상속·양도</span><strong>안산 상속세 신고, 집값을 얼마로 적느냐가 나중 양도세를 정해요</strong></a><a href="/columns/inheritance-zero-tax-filing.html"><span>상속</span><strong>상속세가 0원이어도 신고해 두면 좋은 이유</strong></a><a href="/columns/nominee-stock-inheritance.html"><span>상속·비상장주식</span><strong>명의만 빌려준 주식, 상속 때 세금 폭탄이 되는 이유</strong></a><a href="/columns/family-corporation.html"><span>가족법인</span><strong>가족법인으로 자녀에게 재산 넘기기, 득과 실</strong></a><a href="/columns/burden-gift.html"><span>증여·양도</span><strong>부담부증여, 언제 유리하고 언제 손해일까</strong></a><a href="/columns/prior-gift-10years.html"><span>증여·상속</span><strong>10년 안 증여는 다시 합쳐진다, 사전증여 시기 정하기</strong></a><a href="/columns/inheritance-audit-bank.html"><span>상속·세무조사</span><strong>상속세 조사, 통장은 몇 년 치까지 볼까</strong></a><a href="/columns/corporate-bookkeeping-ceo-stock.html"><span>기장·법인</span><strong>안산 법인 기장, 장부만 맡기면 대표 주식은 아무도 안 봐요</strong></a><a href="/columns/january-vat-corporation.html"><span>기장·부가세</span><strong>1월 부가세 확정신고, 법인 대표님이 챙길 5가지</strong></a><a href="/columns/construction-business-diagnosis.html"><span>기업진단</span><strong>안산 기업진단, 건설업 신규·갱신 때 미리 준비할 것</strong></a><!--/COLLIST--></div>
+<div class="pager" id="pager"></div>
 <div class="cta"><div><strong>글로 해결되지 않는 고민이 있나요?</strong><p>세무사가 직접 전화로 1차 진단을 해 드려요.</p></div><a href="/#diagnose">무료 1차 진단 신청</a></div>
 </main>
 <footer>
@@ -166,12 +171,20 @@ function cat(a){return a.querySelector('span').textContent}
 function txt(a){return a.textContent.replace(/\s/g,'').toLowerCase()}
 T.forEach(function(t,i){var n=items.filter(function(a){return t[1].test(cat(a))}).length;if(i&&!n)return;
  var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.innerHTML=t[0]+'<em>'+n+'</em>';b.onclick=function(){cur=i;draw();try{history.replaceState(null,'',i?'#'+encodeURIComponent(t[0]):location.pathname)}catch(e){}};b.dataset.i=i;tabs.appendChild(b)});
-function draw(){var k=q.value.replace(/\s/g,'').toLowerCase(),shown=0;
- items.forEach(function(a){var ok=T[cur][1].test(cat(a))&&(!k||txt(a).indexOf(k)>-1);a.style.display=ok?'':'none';if(ok)shown++});
- none.style.display=shown?'none':'block';
- [].forEach.call(tabs.children,function(b){var on=+b.dataset.i===cur;b.className=on?'on':'';b.setAttribute('aria-selected',on)})}
+var PER=9,page=1,pager=document.getElementById('pager');
+function draw(keep){var k=q.value.replace(/\s/g,'').toLowerCase();if(!keep)page=1;
+ var hit=items.filter(function(a){return T[cur][1].test(cat(a))&&(!k||txt(a).indexOf(k)>-1)});
+ var pages=Math.max(1,Math.ceil(hit.length/PER));if(page>pages)page=pages;
+ items.forEach(function(a){a.style.display='none'});
+ hit.slice((page-1)*PER,page*PER).forEach(function(a){a.style.display=''});
+ none.style.display=hit.length?'none':'block';
+ [].forEach.call(tabs.children,function(b){var on=+b.dataset.i===cur;b.className=on?'on':'';b.setAttribute('aria-selected',on)});
+ pager.innerHTML='';if(pages<2)return;
+ function btn(label,n,dis,on){var b=document.createElement('button');b.type='button';b.innerHTML=label;b.disabled=!!dis;if(on){b.className='on';b.setAttribute('aria-current','page')}
+  b.onclick=function(){page=n;draw(true);var t=document.getElementById('q').getBoundingClientRect().top+scrollY-140;scrollTo({top:t,behavior:'smooth'})};pager.appendChild(b)}
+ btn('‹ 이전',page-1,page===1);for(var n=1;n<=pages;n++)btn(n,n,false,n===page);btn('다음 ›',page+1,page===pages)}
 var h=decodeURIComponent(location.hash.slice(1));T.forEach(function(t,i){if(t[0]===h)cur=i});
-q.addEventListener('input',draw);draw();
+q.addEventListener('input',function(){draw()});draw();
 })();
 </script>
 </body>
