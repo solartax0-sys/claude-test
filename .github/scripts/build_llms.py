@@ -1,4 +1,4 @@
-"""llms.txt 생성: AI 검색엔진에게 사이트 소개와 대표 글 목록을 알려 주는 안내 파일.
+"""llms.txt(AI 검색 안내)와 feed.xml(RSS) 생성.
 칼럼 목록(columns/index.html의 COLLIST)과 각 칼럼의 description을 읽어 다시 만든다.
 사용: python3 .github/scripts/build_llms.py  (저장소 루트에서)"""
 import re, os, html
@@ -47,3 +47,30 @@ for key, label in GROUPS:
 out += ["## 기타", "", f"- [전체 칼럼 목록]({SITE}/columns/)", f"- [개인정보처리방침]({SITE}/privacy.html)", ""]
 open(f'{ROOT}/llms.txt', 'w', encoding='utf-8').write('\n'.join(out))
 print('llms.txt 생성:', len(items), '개 칼럼')
+
+# ---- RSS(feed.xml): 네이버 서치어드바이저·빙에 새 칼럼을 빨리 알리기 위한 피드 ----
+from email.utils import format_datetime
+from datetime import datetime, timezone, timedelta
+KST = timezone(timedelta(hours=9))
+def meta(path):
+    s = open(f'{ROOT}{path}', encoding='utf-8').read()
+    d = re.search(r'"datePublished":\s*"(\d{4}-\d{2}-\d{2})"', s)
+    return (d.group(1) if d else '2026-11-10'), desc(path)
+rows = []
+for href, cat, title in items:
+    if not os.path.exists(f'{ROOT}{href}'): continue
+    day, d = meta(href)
+    rows.append((day, html.unescape(title), SITE + href, d, html.unescape(cat)))
+rows.sort(key=lambda r: r[0], reverse=True)  # 같은 날짜는 목록 순서 유지
+x = lambda t: html.escape(t, quote=False)
+feed = ['<?xml version="1.0" encoding="UTF-8"?>', '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>',
+        '<title>솔라세무회계 세무 칼럼 (안산 세무사 설나현)</title>', f'<link>{SITE}/columns/</link>',
+        f'<atom:link href="{SITE}/feed.xml" rel="self" type="application/rss+xml"/>',
+        '<description>상속·증여·양도·기장·법인 세금 칼럼</description>', '<language>ko</language>']
+for day, t, u, d, cat in rows:
+    dt = format_datetime(datetime.strptime(day, '%Y-%m-%d').replace(hour=9, tzinfo=KST))
+    feed.append(f'<item><title>{x(t)}</title><link>{u}</link><guid>{u}</guid><category>{x(cat)}</category>'
+                f'<pubDate>{dt}</pubDate><description>{x(d)}</description></item>')
+feed.append('</channel></rss>')
+open(f'{ROOT}/feed.xml', 'w', encoding='utf-8').write('\n'.join(feed) + '\n')
+print('feed.xml 생성:', len(rows), '개')
