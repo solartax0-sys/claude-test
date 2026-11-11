@@ -21,6 +21,7 @@
 - [안산 증여세 신고 가이드](https://solartax.kr/guide/ansan-gift-tax.html): 받은 사람 주소지 기준 관할세무서, 신고기한 3개월, 가족별 증여공제 한도, 준비서류
 - [안산 양도소득세 신고 가이드](https://solartax.kr/guide/ansan-capital-gains-tax.html): 판 사람 주소지 기준 관할세무서, 예정신고 2개월, 1세대 1주택 비과세와 안산 조정대상지역 이력
 - [안산 사업자 세무 가이드](https://solartax.kr/guide/ansan-business-tax.html): 사업장 기준 관할세무서, 사업자등록 20일, 부가세·종합소득세·법인세·원천세 신고기한, 창업 첫해 체크리스트
+- [안산세무서·동안산세무서 안내](https://solartax.kr/guide/ansan-tax-office.html): 단원구 안산세무서·상록구 동안산세무서 관할, 세금별 담당 세무서 기준, 홈택스로 할 수 있는 일, 안내문·소명 요청 대응, 국선대리인 제도
 
 ## 세무 칼럼
 
