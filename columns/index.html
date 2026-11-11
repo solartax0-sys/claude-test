@@ -93,7 +93,7 @@ footer .wrap>*{max-width:none!important}
 
 /* 칼럼: 시작선을 메인과 같게(1200 기준 왼쪽), 읽기 폭 860 */
 main.wrap{max-width:1200px!important;box-sizing:border-box;padding-left:24px!important;padding-right:24px!important}
-main.wrap>*{max-width:860px}
+main.wrap>*{max-width:none}@media(min-width:900px){main.wrap>.list{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
 
 /* 휴대폰 메뉴 5개: 한 줄, 폭에 맞춰 고르게 */
 @media (max-width:760px){
