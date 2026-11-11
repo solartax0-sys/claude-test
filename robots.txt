@@ -3,3 +3,5 @@ Allow: /
 Disallow: /admin/
 
 Sitemap: https://solartax.kr/sitemap.xml
+
+#DaumWebMasterTool:6315e51e2c2eddef2b09470adff02b26b360736b34e37992fbf81b94c3c95f30:rbSFXQUyqc9N1qm+e2U/ew==
