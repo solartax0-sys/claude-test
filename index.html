@@ -47,8 +47,12 @@
     "addressRegion": "경기도",
     "addressCountry": "KR"
   },
+  "image": "https://solartax.kr/photo-front.jpg",
+  "geo": {"@type": "GeoCoordinates", "latitude": 37.310963, "longitude": 126.827359},
+  "hasMap": "https://maps.app.goo.gl/fo8ss5crMMwAjGxf8",
+  "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:30", "closes": "17:30"}],
   "areaServed": ["안산", "경기도", "대한민국"],
-  "founder": {"@type": "Person", "name": "설나현", "jobTitle": "세무사"},
+  "founder": {"@type": "Person", "name": "설나현", "jobTitle": "세무사", "url": "https://solartax.kr/profile/"},
   "knowsAbout": ["상속세", "증여세", "양도소득세", "가족법인", "기장", "법인세", "기업진단", "세무조사 대응"],
   "sameAs": ["https://blog.naver.com/solar_tax", "https://www.youtube.com/@solar_tax", "https://www.instagram.com/solartax/"]
 }
@@ -523,6 +527,7 @@ footer .wrap{display:flex;flex-direction:column;gap:28px;padding-top:48px;paddin
 .call-time b{color:var(--o-text)}
 .call-time span{color:var(--body);font-size:var(--fs-6)}
 .hero-kicker{font-size:var(--fs-6);font-weight:700;color:var(--o-text);letter-spacing:0}
+.hero h1 .hero-kicker{display:block;line-height:1.6;margin-bottom:22px}
 .refund{display:block;margin-top:6px;color:var(--o-text);font-weight:700}
 /* 11. 작은 회색 글씨 대비 올림 */
 :root{--muted:#5F6470}
@@ -593,8 +598,7 @@ footer .wrap{display:flex;flex-direction:column;gap:28px;padding-top:48px;paddin
 <section class="hero">
   <div class="wrap">
     <div class="hero-l">
-      <span class="hero-kicker">안산 세무사 · 상속·증여·양도 · 개인·법인 기장</span>
-      <h1>평생 일군 재산,<br><em>세금으로 흩어지지 않게</em></h1>
+      <h1><span class="hero-kicker">안산 세무사 설나현 · 상속·증여·양도 · 개인·법인 기장</span>평생 일군 재산,<br><em>세금으로 흩어지지 않게</em></h1>
       <p class="lead">상속·증여·양도 신고부터 세무조사 대응까지,<br class="br-pc"> 안산 세무사 설나현이 첫 상담부터 끝까지 직접 맡습니다. 사업자 기장도 함께 봅니다.</p>
       <div class="person">
         <span class="ph"><img src="/photo-front.jpg" alt="세무사 설나현" width="400" height="400"></span>
