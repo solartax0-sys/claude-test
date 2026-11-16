@@ -31,6 +31,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: 칼럼 하단 추천 칼럼을 같은 주제 우선으로 다시 고르기
+        run: python3 .github/scripts/related.py
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
