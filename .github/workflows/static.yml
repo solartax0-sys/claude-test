@@ -8,6 +8,11 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      submit_all:
+        description: "사이트 지도 전체 주소를 빙에 다시 알리기"
+        type: boolean
+        default: false
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -31,6 +36,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: 칼럼 하단 추천 칼럼을 같은 주제 우선으로 다시 고르기
         run: python3 .github/scripts/related.py
       - name: Setup Pages
@@ -43,3 +50,11 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+      - name: 빙(인덱스나우)에 새로 바뀐 페이지 알리기
+        continue-on-error: true
+        env:
+          BEFORE: ${{ github.event.before }}
+          ALL: ${{ inputs.submit_all && '1' || '0' }}
+        run: |
+          sleep 20
+          python3 .github/scripts/indexnow.py
