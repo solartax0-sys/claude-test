@@ -32,6 +32,7 @@
 
 ### 상속
 
+- [시흥 땅 상속받았는데 수용된다면, 상속세와 양도세는 어떻게 될까](https://solartax.kr/columns/siheung-inherited-land-expropriation.html): 시흥 등 개발 사업지구 안의 땅을 상속받은 뒤 수용 보상을 받을 때 상속세 평가(보상가액과 평가기간), 양도세 취득가액, 공익사업 수용 감면(현금 15%·채권 20%), 비사업용 토지 판단을 정리했어요.
 - [화성 농지 상속, 영농상속공제 30억 원 받을 수 있을까](https://solartax.kr/columns/hwaseong-farmland-inheritance-deduction.html): 화성·시흥 등에서 부모님이 농사짓던 땅을 상속받을 때 영농상속공제(최대 30억 원) 요건을 정리했어요. 부모님 8년·자녀 2년 직접 영농, 거주 요건, 대상 재산, 5년 사후관리까지.
 - [상속세 일괄공제 5억 원, 자녀가 많으면 더 받을 수 있을까](https://solartax.kr/columns/inheritance-lump-sum-deduction.html): 상속세 일괄공제 5억 원과 기초공제·인적공제 합계 중 무엇을 받는지, 배우자 단독상속과 무신고 때 달라지는 점을 정리했어요.
 - [상속세 신고기한 6개월, 무엇부터 순서대로 할까](https://solartax.kr/columns/inheritance-tax-deadline-6months.html): 부모님이 돌아가신 뒤 상속세 신고기한 6개월 안에 해야 할 일을 순서대로 정리했어요. 재산 조회부터 신고·납부까지.
@@ -82,6 +83,7 @@
 
 ### 기장·법인·부가세·종합소득세
 
+- [부가세 신고를 놓쳤다면, 기한후신고로 가산세 얼마나 줄일까](https://solartax.kr/columns/vat-late-filing-penalty-reduction.html): 부가세 확정신고 기한(1월 25일)을 놓쳤을 때 기한후신고 방법과 무신고가산세 감면율(1개월 50%·3개월 30%·6개월 20%), 납부지연가산세, 늦게 신고할 때 매입세액 공제를 정리했어요.
 - [세금 더 냈다면 경정청구, 5년 안에 돌려받는 방법](https://solartax.kr/columns/tax-refund-claim-5years.html): 종합소득세·부가세·연말정산에서 공제를 빠뜨려 세금을 더 냈다면 법정신고기한이 지난 후 5년 안에 경정청구로 돌려받을 수 있어요. 기한, 사유, 처리 기간, 수정신고와의 차이를 정리했어요.
 - [폐업하면 세금도 끝일까, 폐업 후 꼭 해야 할 신고 4가지](https://solartax.kr/columns/business-closure-tax-filing.html): 개인사업자가 폐업한 뒤에도 남는 세금 신고를 순서대로 정리했어요. 폐업 신고, 다음 달 25일 부가세 확정신고, 남은 재고·집기 부가세, 지급명세서와 5월 종합소득세까지.
 - [노란우산공제 소득공제, 12월에 넣으면 올해 세금이 줄까](https://solartax.kr/columns/yellow-umbrella-deduction.html): 노란우산공제는 그해 낸 금액을 사업소득금액에 따라 200만~600만 원 한도로 소득공제해 줘요. 구간별 한도, 법인 대표 요건, 중도 해지 때 세금, 압류 금지까지 정리했어요.
